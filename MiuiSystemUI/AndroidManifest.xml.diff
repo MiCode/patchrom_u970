@@ -1,0 +1,10 @@
+--- /sources/MICODE/u8818/out/MiuiSystemUI/AndroidManifest.xml
++++ /sources/MICODE/c8812/out/MiuiSystemUI/AndroidManifest.xml
+@@ -24,7 +24,6 @@
+         <activity android:theme="@android:style/Theme.NoTitleBar" android:label="@string/torch_activity_name" android:icon="@drawable/torch_activity_icon" android:name=".TorchActivity" android:taskAffinity="" android:launchMode="singleTask" android:screenOrientation="portrait">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+-                <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+         <activity android:name=".usb.UsbStorageActivity" android:excludeFromRecents="true" />
