@@ -1,0 +1,28 @@
+From 62b7ca0785e37173800709fba1b383c39f894b30 Mon Sep 17 00:00:00 2001
+From: yumingyang <yumingyang@xiaomi.com>
+Date: Mon, 13 Aug 2012 12:20:44 +0800
+Subject: [PATCH] modify
+
+---
+ TelephonyProvider/smali/com/android/providers/telephony/MmsSmsDatabaseHelper.smali |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+--- a/TelephonyProvider/smali/com/android/providers/telephony/MmsSmsDatabaseHelper.smali
++++ b/TelephonyProvider/smali/com/android/providers/telephony/MmsSmsDatabaseHelper.smali
+@@ -218,11 +218,11 @@
+     .parameter "db"
+ 
+     .prologue
+-    const-string v0, "CREATE TABLE sms (_id INTEGER PRIMARY KEY,thread_id INTEGER,address TEXT,person INTEGER,date INTEGER,date_sent INTEGER DEFAULT 0,protocol INTEGER,read INTEGER DEFAULT 0,status INTEGER DEFAULT -1,type INTEGER,reply_path_present INTEGER,subject TEXT,body TEXT,service_center TEXT,locked INTEGER DEFAULT 0,error_code INTEGER DEFAULT 0,seen INTEGER DEFAULT 0,timed INTEGER DEFAULT 0,deleted INTEGER DEFAULT 0,sync_state INTEGER DEFAULT 0,marker INTEGER DEFAULT 0,source TEXT,bind_id INTEGER DEFAULT 0,mx_status INTEGER DEFAULT 0,mx_id INTEGER,out_time INTEGER DEFAULT 0);"
++    const-string v0, "CREATE TABLE sms (_id INTEGER PRIMARY KEY,thread_id INTEGER,address TEXT,person INTEGER,date INTEGER,date_sent INTEGER DEFAULT 0,protocol INTEGER,read INTEGER DEFAULT 0,status INTEGER DEFAULT -1,type INTEGER,reply_path_present INTEGER,subject TEXT,body TEXT,service_center TEXT,locked INTEGER DEFAULT 0,error_code INTEGER DEFAULT 0,seen INTEGER DEFAULT 0,timed INTEGER DEFAULT 0,deleted INTEGER DEFAULT 0,sync_state INTEGER DEFAULT 0,marker INTEGER DEFAULT 0,source TEXT,bind_id INTEGER DEFAULT 0,mx_status INTEGER DEFAULT 0,mx_id INTEGER,out_time INTEGER DEFAULT 0,dest_port INTEGER DEFAULT 0,sms_pdu TEXT);"
+ 
+     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+ 
+-    const-string v0, "CREATE TABLE raw (_id INTEGER PRIMARY KEY,date INTEGER,reference_number INTEGER,count INTEGER,sequence INTEGER,destination_port INTEGER,address TEXT,pdu TEXT);"
++    const-string v0, "CREATE TABLE raw (_id INTEGER PRIMARY KEY,date INTEGER,reference_number INTEGER,count INTEGER,sequence INTEGER,destination_port INTEGER,address TEXT,pdu TEXT,sim_index INTEGER);"
+ 
+     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+ 
+-- 
+1.7.1
+
