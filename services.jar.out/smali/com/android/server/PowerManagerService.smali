@@ -12318,6 +12318,8 @@
 
     .line 2995
     :cond_1
+    invoke-direct {p0, p1}, Lcom/android/server/PowerManagerService;->checkRecovery(Ljava/lang/String;)V
+
     move-object v0, p1
 
     .line 2996
@@ -13919,4 +13921,219 @@
 
     .line 2572
     return-void
+.end method
+
+#####################################################################################
+#
+#    private void checkRecovery(String reason) {
+#        if ("recovery".equals(reason)) {
+#            Log.i(TAG, "execute recovery command");
+#            java.lang.Process proc = null;
+#            String cmd = "echo -n boot-recovery | busybox dd of=/dev/block/mmcblk0p5 count=1 conv=sync ; sync; reboot";
+#            try {
+#                ArrayList<String> cmds = new ArrayList<String>();
+#                cmds.add("sh");
+#                cmds.add("-c");
+#                cmds.add(cmd);
+#                ProcessBuilder pb=new ProcessBuilder(cmds);
+#                proc = pb.start();
+#                BufferedReader bufferedreader = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+#                // read the ls output
+#                String line = "";
+#                StringBuilder sb = new StringBuilder(line);
+#                while ((line = bufferedreader.readLine()) != null) {
+#                        sb.append(line);
+#                        sb.append('\n');
+#                }
+#                Log.i(TAG ,sb.toString());
+#                //使用exec执行不会等执行成功以后才返回,它会立即返回
+#                //所以在某些情况下是很要命的(比如复制文件的时候)
+#                //使用wairFor()可以等待命令执行完成以后才返回
+#                try {
+#                    if (proc.waitFor() != 0) {
+#                        Log.i(TAG,"exit value = " + proc.exitValue());
+#                    }
+#                }
+#                catch (InterruptedException e) {
+#                    e.printStackTrace();
+#                }
+#            } catch (IOException e1) {
+#                e1.printStackTrace();
+#            }
+#        }
+#    }
+#
+.method private checkRecovery(Ljava/lang/String;)V
+    .locals 12
+    .parameter "reason"
+
+    .prologue
+    const-string v9, "recovery"
+
+    invoke-virtual {v9, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_0
+
+    const-string v9, "PowerManagerService"
+
+    const-string v10, "execute recovery command"
+
+    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const/4 v7, 0x0
+
+    .local v7, proc:Ljava/lang/Process;
+    const-string v1, "echo -n boot-recovery | busybox dd of=/dev/block/mmcblk0p5 count=1 conv=sync ; sync; reboot"
+
+    .local v1, cmd:Ljava/lang/String;
+    :try_start_0
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .local v2, cmds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    const-string v9, "sh"
+
+    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    const-string v9, "-c"
+
+    invoke-virtual {v2, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    new-instance v6, Ljava/lang/ProcessBuilder;
+
+    invoke-direct {v6, v2}, Ljava/lang/ProcessBuilder;-><init>(Ljava/util/List;)V
+
+    .local v6, pb:Ljava/lang/ProcessBuilder;
+    invoke-virtual {v6}, Ljava/lang/ProcessBuilder;->start()Ljava/lang/Process;
+
+    move-result-object v7
+
+    new-instance v0, Ljava/io/BufferedReader;
+
+    new-instance v9, Ljava/io/InputStreamReader;
+
+    invoke-virtual {v7}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v10
+
+    invoke-direct {v9, v10}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+
+    invoke-direct {v0, v9}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+
+    .local v0, bufferedreader:Ljava/io/BufferedReader;
+    const-string v5, ""
+
+    .local v5, line:Ljava/lang/String;
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .local v8, sb:Ljava/lang/StringBuilder;
+    :goto_0
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    move-result-object v5
+
+    if-eqz v5, :cond_1
+
+    invoke-virtual {v8, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v9, 0xa
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    .end local v0           #bufferedreader:Ljava/io/BufferedReader;
+    .end local v2           #cmds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    .end local v5           #line:Ljava/lang/String;
+    .end local v6           #pb:Ljava/lang/ProcessBuilder;
+    .end local v8           #sb:Ljava/lang/StringBuilder;
+    :catch_0
+    move-exception v4
+
+    .local v4, e1:Ljava/io/IOException;
+    invoke-virtual {v4}, Ljava/io/IOException;->printStackTrace()V
+
+    .end local v1           #cmd:Ljava/lang/String;
+    .end local v4           #e1:Ljava/io/IOException;
+    .end local v7           #proc:Ljava/lang/Process;
+    :cond_0
+    :goto_1
+    return-void
+
+    .restart local v0       #bufferedreader:Ljava/io/BufferedReader;
+    .restart local v1       #cmd:Ljava/lang/String;
+    .restart local v2       #cmds:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
+    .restart local v5       #line:Ljava/lang/String;
+    .restart local v6       #pb:Ljava/lang/ProcessBuilder;
+    .restart local v7       #proc:Ljava/lang/Process;
+    .restart local v8       #sb:Ljava/lang/StringBuilder;
+    :cond_1
+    :try_start_1
+    const-string v9, "PowerManagerService"
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
+
+    :try_start_2
+    invoke-virtual {v7}, Ljava/lang/Process;->waitFor()I
+
+    move-result v9
+
+    if-eqz v9, :cond_0
+
+    const-string v9, "PowerManagerService"
+
+    new-instance v10, Ljava/lang/StringBuilder;
+
+    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v11, "exit value = "
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v7}, Ljava/lang/Process;->exitValue()I
+
+    move-result v11
+
+    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v9, v10}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catch Ljava/lang/InterruptedException; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+
+    goto :goto_1
+
+    :catch_1
+    move-exception v3
+
+    .local v3, e:Ljava/lang/InterruptedException;
+    :try_start_3
+    invoke-virtual {v3}, Ljava/lang/InterruptedException;->printStackTrace()V
+    :try_end_3
+    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_0
+
+    goto :goto_1
 .end method
