@@ -7419,9 +7419,6 @@
 
     invoke-static {v11, v12}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2719
-    if-eqz v2, :cond_5
-
     move/from16 v0, p2
 
     and-int/lit16 v11, v0, 0x100
@@ -7437,7 +7434,7 @@
     .line 2721
     const/4 v11, 0x0
 
-    if-eqz v1, :cond_21
+    if-eqz v2, :cond_21
  
     const/4 v12, 0x1
 
