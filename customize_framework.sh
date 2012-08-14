@@ -20,5 +20,5 @@ if [ $2 = "out/framework" ];then
 
 	$APKTOOL b  "out/miui" "out/miui.jar"
 	mkdir -p "out/ZIP/system/framework"
-	cp "out/miui.jar" "out/ZIP/system/framework/miui.jar"
+	cp "out/miui.jar" "out/ZIP/system/framework/miui.jar" 
 fi

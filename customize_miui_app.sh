@@ -53,5 +53,5 @@ if [ $1 = "TelephonyProvider" ];then
         exit 1
     done
 
-	$XMLMERGYTOOL $1/res/values $2/res/values
+	$XMLMERGYTOOL $1/res/values $2/res/values 
 fi
