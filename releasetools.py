@@ -19,4 +19,4 @@ def FullOTA_InstallEnd(info):
     AddAssertions(info)
 
 def IncrementalOTA_InstallEnd(info):
-    AddAssertions(info)
+    AddAssertions(info) 
