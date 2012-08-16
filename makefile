@@ -19,10 +19,10 @@ local-miui-removed-apps     := SettingsProvider MediaProvider Stk Bluetooth \
 #                               Mms TelephonyProvider Phone  \
 
 # All apps need to be removed from original ZIP file
-local-phone-apps := ApplicationsProvider BackupRestoreConfirmation Block Bluetooth Camera CertInstaller \
-          cmmb DefaultContainerService  DownloadProvider DownloadProviderUi DrmProvider \
+local-phone-apps := ApplicationsProvider BackupRestoreConfirmation Bluetooth Camera CertInstaller \
+          DefaultContainerService DrmProvider \
           FmRadio HTMLViewer KeyChain LiveWallpapers LiveWallpapersPicker MediaProvider NoiseField  \
-          PackageInstaller Phone PicoTts Provision SettingsProvider SharedStorageBackup \
+          PicoTts SettingsProvider SharedStorageBackup \
           Stk  TelephonyProvider UserDictionaryProvider VpnDialogs \
 
 # ProjectMenuAct MMITest_II MMITest_record OkbService
