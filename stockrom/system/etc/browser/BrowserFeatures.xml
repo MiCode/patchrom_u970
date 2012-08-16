@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<DebugMode>false</DebugMode><!--DebugMode will forrce to parse this xml file-->
+	<EnableSettingDefaultZoom>false</EnableSettingDefaultZoom><!--Browser setting advance DefaultZoom-->
+	<EnableSettingFontSize>false</EnableSettingFontSize><!--Browser setting accessibility FontSize-->
+	<EnableSettingDownloadPath>true</EnableSettingDownloadPath><!--Browser setting general DownloadPath-->
+	<EnableOptionMenuAbout>false</EnableOptionMenuAbout><!--Browser option about-->
+	<EnableOptionMenuPageInfo>false</EnableOptionMenuPageInfo><!--Browser option pageinfo-->
+	<EnableOptionMenuDesktop>false</EnableOptionMenuDesktop><!--Browser option Desktop-->
+	<!--<BookmarksDelSetHomepage>true</BookmarksDelSetHomepage>-->
+	<EnableNavBarVoiceSearch>false</EnableNavBarVoiceSearch><!--Browser nav bar VoiceSearch-->
+	<EnableCustomizeHomepage>true</EnableCustomizeHomepage><!--Browser Homepage Customize-->
+	<EnablePhoneUA>true</EnablePhoneUA><!--Browser UA Customize-->
+</root>
+
+<!-- ics default setting-->
+<!--
+<root>
+	<DebugMode>false</DebugMode>
+	<EnableSettingDefaultZoom>true</EnableSettingDefaultZoom>
+	<EnableSettingFontSize>true</EnableSettingFontSize>
+	<EnableSettingDownloadPath>true</EnableSettingDownloadPath>
+	<EnableOptionMenuAbout>true</EnableOptionMenuAbout>
+	<EnableOptionMenuPageInfo>true</EnableOptionMenuPageInfo>
+	<EnableOptionMenuDesktop>true</EnableOptionMenuDesktop>
+	<EnableNavBarVoiceSearch>true</EnableNavBarVoiceSearch>
+	<EnableCustomizeHomepage>true</EnableCustomizeHomepage>
+</root>
+-->
