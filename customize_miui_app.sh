@@ -38,6 +38,17 @@ if [ $1 = "Phone" ];then
         dstfile="out/$filepath/$filename"
         cat $file >> $dstfile
     done
+
+    cp $1/Phone.patch out/
+    cd out
+    $GIT_APPLY Phone.patch
+    cd ..
+    for file in `find $2 -name *.rej`
+    do
+	echo "Phone patch fail"
+        exit 1
+    done
+
 	echo "Merge Phone's xml"
 	$XMLMERGYTOOL $1/res/values $2/res/values
 fi
