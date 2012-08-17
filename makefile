@@ -48,4 +48,7 @@ local-zip-misc:
 	rm $(ZIP_DIR)/system/bin/bootanimation
 	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
 
+	@echo use special libffmpeg.so
+	cp other/libffmpeg.so $(ZIP_DIR)/system/lib/libffmpeg.so
+
 #	cp other/vold.fstab $(ZIP_DIR)/system/etc/vold.fstab
