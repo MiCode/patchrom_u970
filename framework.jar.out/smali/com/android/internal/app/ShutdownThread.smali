@@ -224,7 +224,7 @@
 
     .line 225
     .local v2, pd:Landroid/app/ProgressDialog;
-    const v3, 0x1040124
+    const v3, 0x60c0191
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -233,7 +233,7 @@
     invoke-virtual {v2, v3}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 226
-    const v3, 0x1040128
+    const v3, 0x60c01aa
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -850,6 +850,10 @@
     .line 125
     .local v3, resourceId:I
     :goto_1
+    invoke-static {v3}, Lcom/android/internal/app/ShutdownThread;->getResourceId(I)I
+
+    move-result v3
+
     const-string v4, "ShutdownThread"
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -886,7 +890,9 @@
 
     invoke-direct {v4, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v5, 0x1040124
+    invoke-static {}, Lcom/android/internal/app/ShutdownThread;->getTitleResourceId()I
+
+    move-result v5
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
@@ -1885,13 +1891,13 @@
 
     if-eqz v0, :cond_0
 
-    const v0, 0x1040318
+    const v0, 0x60c018c
 
     :goto_0
     return v0
 
     :cond_0
-    const v0, 0x1040124
+    const v0, 0x60c0191
 
     goto :goto_0
 .end method
@@ -1987,14 +1993,13 @@
     check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
 
     .local v0, animationDrawable:Landroid/graphics/drawable/AnimationDrawable;
-
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
 
     return-void
 
     .end local v0           #animationDrawable:Landroid/graphics/drawable/AnimationDrawable;
     :cond_0
-    const v6, 0x1040128
+    const v6, 0x60c01aa
 
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(I)V
 
