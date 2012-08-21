@@ -40,8 +40,10 @@ if [ $1 = "Phone" ];then
     done
 
     cp $1/Phone.patch out/
+    cp $1/Phone-res.patch out/
     cd out
     $GIT_APPLY Phone.patch
+	patch -p1 < Phone-res.patch
     cd ..
     for file in `find $2 -name *.rej`
     do
@@ -51,6 +53,7 @@ if [ $1 = "Phone" ];then
 
 	echo "Merge Phone's xml"
 	$XMLMERGYTOOL $1/res/values $2/res/values
+	$XMLMERGYTOOL $1/res/values-zh-rCN $2/res/values-zh-rCN
 fi
 
 if [ $1 = "TelephonyProvider" ];then
