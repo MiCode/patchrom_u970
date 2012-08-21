@@ -1,15 +1,15 @@
-From f4a7caa3ff132bfb82fb64ee6dad87fb83a1b665 Mon Sep 17 00:00:00 2001
+From 0f06370e23e6b0856b66c153760351eec60f4e1f Mon Sep 17 00:00:00 2001
 From: mochangming <mochangming@xiaomi.com>
-Date: Tue, 21 Aug 2012 10:07:34 +0800
+Date: Tue, 21 Aug 2012 16:24:12 +0800
 Subject: [PATCH] support the shutdown alarm clock
 
 ---
  .../android/deskclock/AlarmInitReceiver$1.smali    |    5 -
- smali/com/android/deskclock/Alarms.smali           |  416 +++++---------------
- 2 files changed, 106 insertions(+), 315 deletions(-)
+ DeskClock/smali/com/android/deskclock/Alarms.smali |  211 ++++++++++----------
+ 2 files changed, 109 insertions(+), 107 deletions(-)
 
---- a/smali/com/android/deskclock/AlarmInitReceiver$1.smali
-+++ b/smali/com/android/deskclock/AlarmInitReceiver$1.smali
+--- a/DeskClock/smali/com/android/deskclock/AlarmInitReceiver$1.smali
++++ b/DeskClock/smali/com/android/deskclock/AlarmInitReceiver$1.smali
 @@ -80,10 +80,6 @@
  
      invoke-virtual {v0}, Lmiui/net/FirewallManager;->setAlarmBootCompleted()V
@@ -21,18 +21,9 @@ Subject: [PATCH] support the shutdown alarm clock
      invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
  
      move-result-wide v0
---- a/smali/com/android/deskclock/Alarms.smali
-+++ b/smali/com/android/deskclock/Alarms.smali
-@@ -772,7 +772,7 @@
- .end method
- 
- .method static disableAlert(Landroid/content/Context;)V
--    .locals 6
-+    .locals 5
-     .parameter "context"
- 
-     .prologue
-@@ -802,31 +802,16 @@
+--- a/DeskClock/smali/com/android/deskclock/Alarms.smali
++++ b/DeskClock/smali/com/android/deskclock/Alarms.smali
+@@ -802,6 +802,10 @@
      .local v1, sender:Landroid/app/PendingIntent;
      invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
  
@@ -43,32 +34,7 @@ Subject: [PATCH] support the shutdown alarm clock
      invoke-static {p0, v4}, Lcom/android/deskclock/Alarms;->setStatusBarIcon(Landroid/content/Context;Z)V
  
      const-string v2, ""
- 
-     invoke-static {p0, v2}, Lcom/android/deskclock/Alarms;->saveNextAlarm(Landroid/content/Context;Ljava/lang/String;)V
- 
--    sget-boolean v2, Lmiui/os/Build;->IS_MIONE:Z
--
--    if-eqz v2, :cond_0
--
--    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
--
--    move-result-wide v2
--
--    const-wide/16 v4, 0x3e8
--
--    div-long/2addr v2, v4
--
--    const-wide/16 v4, 0x1
--
--    sub-long/2addr v2, v4
--
--    invoke-static {v2, v3}, Lcom/android/deskclock/Alarms;->writeWakeAlarm(J)V
--
--    :cond_0
-     return-void
- .end method
- 
-@@ -1134,7 +1119,9 @@
+@@ -1134,7 +1138,9 @@
      move-result-object v4
  
      .local v4, sender:Landroid/app/PendingIntent;
@@ -79,24 +45,6 @@ Subject: [PATCH] support the shutdown alarm clock
  
      const/4 v6, 0x1
  
-@@ -1154,17 +1141,6 @@
-     .local v5, timeString:Ljava/lang/String;
-     invoke-static {p0, v5}, Lcom/android/deskclock/Alarms;->saveNextAlarm(Landroid/content/Context;Ljava/lang/String;)V
- 
--    sget-boolean v6, Lmiui/os/Build;->IS_MIONE:Z
--
--    if-eqz v6, :cond_0
--
--    const-wide/16 v6, 0x3e8
--
--    div-long v6, p2, v6
--
--    invoke-static {v6, v7}, Lcom/android/deskclock/Alarms;->writeWakeAlarm(J)V
--
--    :cond_0
-     return-void
- .end method
-
---
+-- 
 1.7.1
 
