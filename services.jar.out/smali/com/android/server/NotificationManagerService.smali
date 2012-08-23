@@ -3616,7 +3616,7 @@
 
     const/16 v6, 0x8
 
-    const/16 v7, 0x50
+    const/16 v7, 0x64
 
     move-object/from16 v0, v21
 
@@ -3627,9 +3627,9 @@
     if-eqz v21, :cond_d
 
     .line 830
-    const/16 v6, 0xe
+    const/16 v6, 0x18
 
-    const/16 v7, 0x1f4
+    const/16 v7, 0xbb8
 
     move-object/from16 v0, v21
 

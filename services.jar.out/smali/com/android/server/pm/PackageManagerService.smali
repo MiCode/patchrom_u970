@@ -949,14 +949,12 @@
     const/4 v4, 0x1
 
     invoke-static {v2, v4}, Lcom/android/server/pm/MiuiSharedUids;->add(Lcom/android/server/pm/Settings;Z)V
-    .line 964
     const-string v2, "debug.separate_processes"
 
     invoke-static {v2}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v28
 
-    .line 965
     .local v28, separateProcesses:Ljava/lang/String;
     if-eqz v28, :cond_5
 

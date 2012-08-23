@@ -57,7 +57,6 @@
     .parameter "unused"
 
     .prologue
-    .line 177
     iget-object v0, p0, Lcom/android/internal/app/ShutdownThread$CloseDialogReceiver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V

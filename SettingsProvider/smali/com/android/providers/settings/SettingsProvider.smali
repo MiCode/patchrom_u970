@@ -2079,21 +2079,17 @@
  
     if-eqz v0, :cond_2
 
-    .line 682
     :cond_0
     if-eqz v10, :cond_1
 
-    .line 687
     :try_start_0
     invoke-static {v7}, Landroid/provider/DrmStore;->enforceAccessDrmPermission(Landroid/content/Context;)V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 693
     :goto_0
     const/4 v1, 0x0
 
-    .line 695
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     :try_start_1
     invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2144,7 +2140,6 @@
 
     throw v0
 
-    .line 697
     .end local v8           #e:Ljava/lang/SecurityException;
     :cond_1
 
@@ -2158,7 +2153,6 @@
     :catch_1
     move-exception v0
 
-    .line 703
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :cond_2
     :try_start_2
@@ -2282,17 +2276,14 @@
  
     if-eqz v6, :cond_2
 
-    .line 641
     :cond_0
     if-eqz v3, :cond_1
 
-    .line 646
     :try_start_0
     invoke-static {v1}, Landroid/provider/DrmStore;->enforceAccessDrmPermission(Landroid/content/Context;)V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 652
     :goto_0
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 

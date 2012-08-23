@@ -4490,7 +4490,6 @@
     .parameter "x0"
 
     .prologue
-    .line 228
     iget-object v0, p0, Landroid/widget/TextView;->mSelectionModifierCursorController:Landroid/widget/MiuiCursorController;
 
     return-object v0

@@ -40,9 +40,8 @@ include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
 local-zip-misc:
-	cp other/boot-b03.img $(ZIP_DIR)/boot.img
-	cp other/build-b03.prop $(ZIP_DIR)/system/build.prop
-	cp -f other/apns-conf.xml $(ZIP_DIR)/system/etc/apns-conf.xml
+	cp other/boot-b04.img $(ZIP_DIR)/boot.img
+	cp other/build-b04.prop $(ZIP_DIR)/system/build.prop
 
 	@echo update bootanimation
 	rm $(ZIP_DIR)/system/bin/bootanimation

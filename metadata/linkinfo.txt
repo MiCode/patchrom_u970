@@ -18,9 +18,9 @@ system/bin/ionice|system/bin/toolbox
 system/bin/kill|system/bin/toolbox
 system/bin/ln|system/bin/toolbox
 system/bin/log|system/bin/toolbox
-system/bin/ls|system/bin/toolbox
 system/bin/lsmod|system/bin/toolbox
 system/bin/lsof|system/bin/toolbox
+system/bin/ls|system/bin/toolbox
 system/bin/mkdir|system/bin/toolbox
 system/bin/mount|system/bin/toolbox
 system/bin/mv|system/bin/toolbox
@@ -32,14 +32,15 @@ system/bin/printenv|system/bin/toolbox
 system/bin/ps|system/bin/toolbox
 system/bin/reboot|system/bin/toolbox
 system/bin/renice|system/bin/toolbox
-system/bin/rm|system/bin/toolbox
 system/bin/rmdir|system/bin/toolbox
 system/bin/rmmod|system/bin/toolbox
+system/bin/rm|system/bin/toolbox
 system/bin/route|system/bin/toolbox
 system/bin/schedtop|system/bin/toolbox
 system/bin/sendevent|system/bin/toolbox
 system/bin/setconsole|system/bin/toolbox
 system/bin/setprop|system/bin/toolbox
+system/bin/sh|system/bin/mksh
 system/bin/sleep|system/bin/toolbox
 system/bin/smd|system/bin/toolbox
 system/bin/start|system/bin/toolbox
@@ -52,7 +53,6 @@ system/bin/uptime|system/bin/toolbox
 system/bin/vmstat|system/bin/toolbox
 system/bin/watchprops|system/bin/toolbox
 system/bin/wipe|system/bin/toolbox
-system/bin/sh|system/bin/mksh
 system/bin/su|system/xbin/su
 system/fonts/DroidSans-Bold.ttf|system/fonts/Roboto-Bold.ttf
 system/fonts/DroidSans.ttf|system/fonts/Roboto-Regular.ttf

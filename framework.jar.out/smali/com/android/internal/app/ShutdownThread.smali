@@ -193,14 +193,12 @@
 
     check-cast v1, Landroid/hardware/SensorManager;
 
-    .line 219
     .local v1, mSensorManager:Landroid/hardware/SensorManager;
     invoke-virtual {v1}, Landroid/hardware/SensorManager;->disable()V
 
-    .line 221
     const-string v3, "0"
 
-    const-string/jumbo v4, "zte.closeshutdown.animation"
+    const-string v4, "zte.closeshutdown.animation"
 
     invoke-static {v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
 
@@ -232,7 +230,6 @@
 
     invoke-virtual {v2, v3}, Landroid/app/ProgressDialog;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 226
     const v3, 0x60c01aa
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
@@ -256,20 +253,17 @@
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->setType(I)V
 
-    .line 231
     invoke-static {p0}, Lcom/android/internal/app/ShutdownThread;->createShutDownDialog(Landroid/content/Context;)V
 
-    .line 234
     .end local v2           #pd:Landroid/app/ProgressDialog;
     :cond_2
     sget-object v3, Lcom/android/internal/app/ShutdownThread;->sInstance:Lcom/android/internal/app/ShutdownThread;
 
     iput-object p0, v3, Lcom/android/internal/app/ShutdownThread;->mContext:Landroid/content/Context;
 
-    .line 235
     sget-object v4, Lcom/android/internal/app/ShutdownThread;->sInstance:Lcom/android/internal/app/ShutdownThread;
 
-    const-string/jumbo v3, "power"
+    const-string v3, "power"
 
     invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

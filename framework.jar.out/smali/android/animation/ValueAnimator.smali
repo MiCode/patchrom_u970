@@ -446,7 +446,7 @@
     .locals 1
 
     .prologue
-    .line 1248
+    .line 1253
     sget-object v0, Landroid/animation/ValueAnimator;->sAnimations:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -457,7 +457,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1249
+    .line 1254
     sget-object v0, Landroid/animation/ValueAnimator;->sPendingAnimations:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -468,7 +468,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1250
+    .line 1255
     sget-object v0, Landroid/animation/ValueAnimator;->sDelayedAnims:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -479,7 +479,7 @@
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1251
+    .line 1256
     return-void
 .end method
 
@@ -643,7 +643,23 @@
     .locals 1
 
     .prologue
-    .line 1238
+    .line 1239
+    sget-object v0, Landroid/animation/ValueAnimator;->sAnimations:Ljava/lang/ThreadLocal;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 1240
+    const/4 v0, 0x0
+
+    .line 1243
+    :goto_0
+    return v0
+
+    :cond_0
     sget-object v0, Landroid/animation/ValueAnimator;->sAnimations:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -656,7 +672,7 @@
 
     move-result v0
 
-    return v0
+    goto :goto_0
 .end method
 
 .method public static getFrameDelay()J
@@ -2536,7 +2552,7 @@
     .locals 4
 
     .prologue
-    .line 1255
+    .line 1260
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2563,13 +2579,13 @@
 
     move-result-object v1
 
-    .line 1256
+    .line 1261
     .local v1, returnVal:Ljava/lang/String;
     iget-object v2, p0, Landroid/animation/ValueAnimator;->mValues:[Landroid/animation/PropertyValuesHolder;
 
     if-eqz v2, :cond_0
 
-    .line 1257
+    .line 1262
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -2580,7 +2596,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 1258
+    .line 1263
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2611,12 +2627,12 @@
 
     move-result-object v1
 
-    .line 1257
+    .line 1262
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1261
+    .line 1266
     .end local v0           #i:I
     :cond_0
     return-object v1

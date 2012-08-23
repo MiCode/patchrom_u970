@@ -3517,7 +3517,6 @@
 
     move-result v1
 
-    .line 1449
     .local v1, len:I
     const/4 v0, 0x0
 
@@ -4684,7 +4683,6 @@
 
     if-nez v7, :cond_0
 
-    .line 1591
     invoke-static {p0}, Landroid/telephony/PhoneNumberUtils;->extractNetworkPortionAlt(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -4699,7 +4697,6 @@
 
     move-result-object v4
 
-    .line 1596
     .local v4, numbers:Ljava/lang/String;
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 

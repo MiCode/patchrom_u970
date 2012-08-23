@@ -106,7 +106,7 @@
     .locals 1
 
     .prologue
-    .line 269
+    .line 265
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->mMultiWaveView:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
     return-object v0
@@ -128,10 +128,10 @@
     .parameter "handle"
 
     .prologue
-    .line 263
+    .line 259
     if-eqz p2, :cond_0
 
-    .line 264
+    .line 260
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -141,7 +141,7 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->pokeWakelock()V
 
-    .line 266
+    .line 262
     :cond_0
     return-void
 .end method
@@ -157,47 +157,17 @@
 .end method
 
 .method public onTrigger(Landroid/view/View;I)V
-    .locals 5
+    .locals 4
     .parameter "v"
     .parameter "target"
 
     .prologue
-    const/high16 v4, 0x1000
+    const/high16 v3, 0x1000
 
-    .line 226
-    const-string v1, "LockScreen"
-
-    const-string v2, "Camera onTrigger"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 227
-    const-string v1, "LockScreen"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "onTrigger  target = "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 229
+    .line 225
     if-nez p2, :cond_1
 
-    .line 230
+    .line 226
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -207,12 +177,12 @@
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/KeyguardScreenCallback;->goToUnlockScreen()V
 
-    .line 257
+    .line 253
     :cond_0
     :goto_0
     return-void
 
-    .line 231
+    .line 227
     :cond_1
     const/4 v1, 0x2
 
@@ -222,13 +192,13 @@
 
     if-ne p2, v1, :cond_4
 
-    .line 232
+    .line 228
     :cond_2
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->mCameraDisabled:Z
 
     if-nez v1, :cond_3
 
-    .line 235
+    .line 231
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mUpdateMonitor:Lcom/android/internal/policy/impl/KeyguardUpdateMonitor;
@@ -242,25 +212,25 @@
 
     if-nez v1, :cond_0
 
-    .line 237
+    .line 233
     const-string v1, "LockScreen"
 
     const-string v2, "Camera onTrigger dm is not locked"
 
     invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 238
+    .line 234
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.media.action.STILL_IMAGE_CAMERA"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 239
+    .line 235
     .local v0, intent:Landroid/content/Intent;
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 240
+    .line 236
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
@@ -270,7 +240,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 241
+    .line 237
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -282,7 +252,7 @@
 
     goto :goto_0
 
-    .line 244
+    .line 240
     .end local v0           #intent:Landroid/content/Intent;
     :cond_3
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
@@ -290,7 +260,7 @@
     #calls: Lcom/android/internal/policy/impl/LockScreen;->toggleRingMode()V
     invoke-static {v1}, Lcom/android/internal/policy/impl/LockScreen;->access$300(Lcom/android/internal/policy/impl/LockScreen;)V
 
-    .line 245
+    .line 241
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mUnlockWidgetMethods:Lcom/android/internal/policy/impl/LockScreen$UnlockWidgetCommonMethods;
@@ -300,7 +270,7 @@
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/LockScreen$UnlockWidgetCommonMethods;->updateResources()V
 
-    .line 246
+    .line 242
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -312,13 +282,13 @@
 
     goto :goto_0
 
-    .line 248
+    .line 244
     :cond_4
     const/4 v1, 0x1
 
     if-ne p2, v1, :cond_0
 
-    .line 250
+    .line 246
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.MAIN"
@@ -331,11 +301,11 @@
 
     move-result-object v0
 
-    .line 251
+    .line 247
     .restart local v0       #intent:Landroid/content/Intent;
-    invoke-virtual {v0, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-virtual {v0, v3}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 253
+    .line 249
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mContext:Landroid/content/Context;
@@ -345,7 +315,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 254
+    .line 250
     iget-object v1, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->this$0:Lcom/android/internal/policy/impl/LockScreen;
 
     #getter for: Lcom/android/internal/policy/impl/LockScreen;->mCallback:Lcom/android/internal/policy/impl/KeyguardScreenCallback;
@@ -362,12 +332,12 @@
     .locals 1
 
     .prologue
-    .line 277
+    .line 273
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->mMultiWaveView:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->ping()V
 
-    .line 278
+    .line 274
     return-void
 .end method
 
@@ -376,12 +346,12 @@
     .parameter "animate"
 
     .prologue
-    .line 273
+    .line 269
     iget-object v0, p0, Lcom/android/internal/policy/impl/LockScreen$MultiWaveViewMethods;->mMultiWaveView:Lcom/android/internal/widget/multiwaveview/MultiWaveView;
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/multiwaveview/MultiWaveView;->reset(Z)V
 
-    .line 274
+    .line 270
     return-void
 .end method
 

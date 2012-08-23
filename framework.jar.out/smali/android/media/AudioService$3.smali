@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2847
+    .line 2859
     iput-object p1, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Landroid/telephony/PhoneStateListener;-><init>()V
@@ -42,17 +42,17 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 2850
+    .line 2862
     if-ne p1, v0, :cond_1
 
-    .line 2852
+    .line 2864
     invoke-static {}, Landroid/media/AudioService;->access$6400()Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 2853
+    .line 2865
     :try_start_0
     iget-object v0, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
@@ -61,15 +61,15 @@
     #setter for: Landroid/media/AudioService;->mIsRinging:Z
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$6502(Landroid/media/AudioService;Z)Z
 
-    .line 2854
+    .line 2866
     monitor-exit v1
 
-    .line 2861
+    .line 2873
     :cond_0
     :goto_0
     return-void
 
-    .line 2854
+    .line 2866
     :catchall_0
     move-exception v0
 
@@ -79,7 +79,7 @@
 
     throw v0
 
-    .line 2855
+    .line 2867
     :cond_1
     const/4 v0, 0x2
 
@@ -87,7 +87,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2857
+    .line 2869
     :cond_2
     invoke-static {}, Landroid/media/AudioService;->access$6400()Ljava/lang/Object;
 
@@ -95,7 +95,7 @@
 
     monitor-enter v1
 
-    .line 2858
+    .line 2870
     :try_start_1
     iget-object v0, p0, Landroid/media/AudioService$3;->this$0:Landroid/media/AudioService;
 
@@ -104,7 +104,7 @@
     #setter for: Landroid/media/AudioService;->mIsRinging:Z
     invoke-static {v0, v2}, Landroid/media/AudioService;->access$6502(Landroid/media/AudioService;Z)Z
 
-    .line 2859
+    .line 2871
     monitor-exit v1
 
     goto :goto_0

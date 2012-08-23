@@ -3500,13 +3500,11 @@
 
     if-eqz v2, :cond_0
 
-    .line 689
     iget-object v0, p2, Landroid/os/AsyncResult;->userObj:Ljava/lang/Object;
 
     .end local v0           #reason:Ljava/lang/String;
     check-cast v0, Ljava/lang/String;
 
-    .line 691
     .restart local v0       #reason:Ljava/lang/String;
     :cond_0
     sget-object v2, Lcom/android/internal/telephony/DataConnectionTracker$State;->IDLE:Lcom/android/internal/telephony/DataConnectionTracker$State;

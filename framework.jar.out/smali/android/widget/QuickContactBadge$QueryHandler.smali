@@ -222,17 +222,14 @@
 
     if-eqz p3, :cond_3
 
-    .line 284
     invoke-interface {p3}, Landroid/database/Cursor;->close()V
 
     :cond_3
     throw v7
 
-    .line 295
     :cond_4
     if-eqz v2, :cond_2
 
-    .line 297
     iget-object v6, p0, Landroid/widget/QuickContactBadge$QueryHandler;->this$0:Landroid/widget/QuickContactBadge;
 
     invoke-virtual {v6}, Landroid/widget/QuickContactBadge;->getContext()Landroid/content/Context;
@@ -251,6 +248,7 @@
 
     goto :goto_1
 
+    .line 253
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_3

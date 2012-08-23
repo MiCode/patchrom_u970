@@ -209,7 +209,6 @@
     .locals 1
 
     .prologue
-    .line 294
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
 
@@ -217,10 +216,8 @@
 
     iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
  
-    .line 295
     invoke-virtual {p0}, Landroid/content/res/Configuration;->setToDefaults()V
 
-    .line 296
     return-void
 .end method
 
@@ -229,7 +226,6 @@
     .parameter "o"
 
     .prologue
-    .line 301
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -238,10 +234,8 @@
 
     iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
  
-    .line 302
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->setTo(Landroid/content/res/Configuration;)V
 
-    .line 303
     return-void
 .end method
 
@@ -250,7 +244,6 @@
     .parameter "source"
 
     .prologue
-    .line 821
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Lmiui/content/res/ExtraConfiguration;
@@ -259,10 +252,8 @@
 
     iput-object v0, p0, Landroid/content/res/Configuration;->extraConfig:Lmiui/content/res/ExtraConfiguration;
 
-    .line 822
     invoke-virtual {p0, p1}, Landroid/content/res/Configuration;->readFromParcel(Landroid/os/Parcel;)V
 
-    .line 823
     return-void
 .end method
 
