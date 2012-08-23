@@ -1182,4 +1182,4 @@ system/xbin/hciconfig 0 2000 755
 system/xbin/hcitool 0 2000 755
 system/xbin/su 0 0 6755
 system/xbin/insecure 0 2000 6755
-
+system/bin/miuiapp 0 2000 755

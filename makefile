@@ -1,5 +1,5 @@
 #
-# Makefile for c8812
+# Makefile for u970
 #
 
 # The original zip file, MUST be specified by each product
@@ -16,14 +16,13 @@ local-modified-apps := SettingsProvider
 # All apks from MIUI
 local-miui-removed-apps := SettingsProvider MediaProvider Stk Bluetooth \
 
-#                               Mms TelephonyProvider Phone  \
 
 # All apps need to be removed from original ZIP file
 local-phone-apps := ApplicationsProvider BackupRestoreConfirmation Bluetooth Camera CertInstaller \
-          DefaultContainerService DrmProvider \
+          DefaultContainerService DrmProvider LatinIME\
           FmRadio HTMLViewer KeyChain LiveWallpapers LiveWallpapersPicker MediaProvider NoiseField  \
           PicoTts SettingsProvider SharedStorageBackup \
-          Stk  TelephonyProvider UserDictionaryProvider VpnDialogs \
+          Stk UserDictionaryProvider VpnDialogs \
 
 # ProjectMenuAct MMITest_II MMITest_record OkbService
 # To include the local targets before and after zip the final ZIP file,  
@@ -51,4 +50,7 @@ local-zip-misc:
 	@echo use special libffmpeg.so
 	cp other/libffmpeg.so $(ZIP_DIR)/system/lib/libffmpeg.so
 
-#	cp other/vold.fstab $(ZIP_DIR)/system/etc/vold.fstab
+	@echo use orignal installd
+	cp other/installd $(ZIP_DIR)/system/bin/installd
+	cp other/miuiapp $(ZIP_DIR)/system/bin/miuiapp
+
