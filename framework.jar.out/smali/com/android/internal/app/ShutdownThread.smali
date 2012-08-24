@@ -844,10 +844,6 @@
     .line 125
     .local v3, resourceId:I
     :goto_1
-    invoke-static {v3}, Lcom/android/internal/app/ShutdownThread;->getResourceId(I)I
-
-    move-result v3
-
     const-string v4, "ShutdownThread"
 
     new-instance v5, Ljava/lang/StringBuilder;
