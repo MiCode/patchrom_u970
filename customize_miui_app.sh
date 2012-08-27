@@ -40,9 +40,11 @@ if [ $1 = "Phone" ];then
     done
 
     cp $1/Phone.patch out/
+    cp $1/PhoneUtils.patch out/
     cp $1/Phone-res.patch out/
     cd out
     $GIT_APPLY Phone.patch
+    $GIT_APPLY PhoneUtils.patch
 	patch -p1 < Phone-res.patch
     cd ..
     for file in `find $2 -name *.rej`
@@ -53,7 +55,11 @@ if [ $1 = "Phone" ];then
 
 	echo "Merge Phone's xml"
 	$XMLMERGYTOOL $1/res/values $2/res/values
-	$XMLMERGYTOOL $1/res/values-zh-rCN $2/res/values-zh-rCN
+    $XMLMERGYTOOL $1/res/values-zh-rCN $2/res/values-zh-rCN
+
+    file=out/$1/res/values/public.xml 
+    sed "s#</resources>#    <public type=\"string\" name=\"mmiNwTerminited\" id=\"0x7f0c03ea\" />\n</resources>#" $file > tmp.file
+    mv  tmp.file out/$1/res/values/public.xml
 fi
 
 if [ $1 = "TelephonyProvider" ];then
