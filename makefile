@@ -47,8 +47,8 @@ local-zip-misc:
 	rm -rf $(ZIP_DIR)/system/bin/bootanimation
 	cp other/bootanimation $(ZIP_DIR)/system/bin/bootanimation
 
-	@echo use special libffmpeg.so
-	cp other/libffmpeg.so $(ZIP_DIR)/system/lib/libffmpeg.so
+	@echo use special libffmpeg_xm.so
+	cp other/libffmpeg_xm.so $(ZIP_DIR)/system/lib/libffmpeg_xm.so
 
 	@echo use orignal installd
 	cp other/installd $(ZIP_DIR)/system/bin/installd
