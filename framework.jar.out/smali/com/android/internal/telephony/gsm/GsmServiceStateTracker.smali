@@ -7725,18 +7725,6 @@
 
     if-ne v9, v7, :cond_5
 
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    invoke-virtual {v9}, Lcom/android/internal/telephony/gsm/GSMPhone;->getServiceState()Landroid/telephony/ServiceState;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/telephony/ServiceState;->getState()I
-
-    move-result v9
-
-    if-nez v9, :cond_5
-
     move v5, v7
 
     .line 515
@@ -7752,30 +7740,67 @@
 
     if-ne v9, v12, :cond_6
 
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    invoke-virtual {v9}, Lcom/android/internal/telephony/gsm/GSMPhone;->getServiceState()Landroid/telephony/ServiceState;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/telephony/ServiceState;->getState()I
-
-    move-result v9
-
-    if-nez v9, :cond_6
-
     move v4, v7
 
     .line 519
     .local v4, showPlmn:Z
     :goto_1
+
+    .line 526
+    iget-object v9, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+
+    invoke-virtual {v9}, Landroid/telephony/ServiceState;->is3GNettype()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_3
+
+    .line 528
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " 3G"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    .line 529
+    new-instance v9, Ljava/lang/StringBuilder;
+
+    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v9, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    const-string v10, " 3G"
+
+    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 550
     :cond_3
     :goto_2
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, "updateSpnDisplay: changed sending intent rule="
+    const-string/jumbo v10, "updateSpnDisplay: changed sending intent rule="
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7893,76 +7918,6 @@
 
     .line 515
     goto/16 :goto_1
-
-    .line 532
-    .restart local v4       #showPlmn:Z
-    :cond_7
-    if-eqz v1, :cond_8
-
-    const-string v9, "46001"
-
-    invoke-virtual {v1, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_8
-
-    .line 534
-    const-string v2, "China Unicom"
-
-    .line 535
-    const/4 v4, 0x1
-
-    goto :goto_2
-
-    .line 537
-    :cond_8
-    if-eqz v2, :cond_9
-
-    const-string v9, ""
-
-    invoke-virtual {v2, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_a
-
-    :cond_9
-    if-eqz v1, :cond_a
-
-    .line 539
-    const-string v9, "GSM"
-
-    const-string/jumbo v10, "updateSpnDisplay plmn null "
-
-    invoke-static {v9, v10}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 540
-    iget-object v9, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    iget-object v9, v9, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
-
-    invoke-interface {v9, v1}, Lcom/android/internal/telephony/CommandsInterface;->getPLMN(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 541
-    const/4 v4, 0x1
-
-    goto/16 :goto_2
-
-    .line 543
-    :cond_a
-    if-eqz v2, :cond_3
-
-    const-string v9, ""
-
-    if-eq v2, v9, :cond_3
-
-    .line 545
-    const/4 v4, 0x1
-
-    goto/16 :goto_2
 .end method
 
 .method private getPlmn()Ljava/lang/String;
