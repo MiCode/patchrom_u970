@@ -14,7 +14,7 @@ Subject: [PATCH] support the shutdown alarm clock
  
      invoke-virtual {v0, v11}, Lmiui/net/FirewallManager;->addOneShotFlag(I)V
  
--    sget-boolean v0, Lmiui/os/Build;->IS_MIONE:Z
+-    sget-boolean v0, Lmiui/os/Build;->IS_XIAOMI:Z
 -
 -    if-eqz v0, :cond_3
 -
