@@ -6305,6 +6305,25 @@
 
     .line 262
     .local v20, dispatchedByApplication:Z
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/internal/telephony/WapPushOverSms;->mimeType:Ljava/lang/String;
+
+    move-object/from16 v2, p1
+
+    move/from16 v3, v17
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/android/internal/telephony/WapPushOverSms;->checkFirewallForWapPush(Ljava/lang/String;[BI)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_miui
+
+    const/4 v3, -0x1
+
+    goto/16 :goto_0
+
+    :cond_miui
     sparse-switch v16, :sswitch_data_1
 
     .line 347
@@ -7285,4 +7304,66 @@
     move-result v0
 
     return v0
+.end method
+
+.method private checkFirewallForWapPush(Ljava/lang/String;[BI)Z
+    .locals 5
+    .parameter "mimeType"
+    .parameter "pdu"
+    .parameter "dataIndex"
+
+    .prologue
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    .line 293
+    const-string v3, "application/vnd.wap.coc"
+
+    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_0
+
+    .line 294
+    array-length v3, p2
+
+    sub-int/2addr v3, p3
+
+    new-array v0, v3, [B
+
+    .line 295
+    .local v0, intentData:[B
+    array-length v3, v0
+
+    invoke-static {p2, p3, v0, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 296
+    iget-object v3, p0, Lcom/android/internal/telephony/WapPushOverSms;->mContext:Landroid/content/Context;
+
+    invoke-static {v3, v0}, Lmiui/provider/ExtraTelephony;->checkFirewallForWapPush(Landroid/content/Context;[B)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    .line 297
+    iget-object v2, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
+
+    const/4 v3, -0x1
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v1, v3, v4}, Lcom/android/internal/telephony/SMSDispatcher;->acknowledgeLastIncomingSms(ZILandroid/os/Message;)V
+
+    .line 301
+    .end local v0           #intentData:[B
+    :goto_0
+    return v1
+
+    :cond_0
+    move v1, v2
+
+    goto :goto_0
 .end method
