@@ -11,12 +11,12 @@ Subject: [PATCH] fix call recorder
 +++ b/Phone/smali/com/android/phone/MiuiInCallScreen.smali
 @@ -608,7 +608,7 @@
  
-     iget-object v9, p0, Lcom/android/phone/MiuiInCallScreen;->mCallRecorder:Landroid/media/MediaRecorder;
+     iget-object v10, p0, Lcom/android/phone/MiuiInCallScreen;->mCallRecorder:Landroid/media/MediaRecorder;
  
--    const/4 v10, 0x4
-+    const/16 v10, 0x8
+-    const/4 v11, 0x4
++    const/16 v11, 0x8
  
-     invoke-virtual {v9, v10}, Landroid/media/MediaRecorder;->setAudioSource(I)V
+     invoke-virtual {v10, v11}, Landroid/media/MediaRecorder;->setAudioSource(I)V
  
 @@ -717,6 +717,8 @@
      move-exception v3
@@ -24,9 +24,9 @@ Subject: [PATCH] fix call recorder
      .local v3, e:Ljava/lang/Exception;
 +    invoke-static {}, Lcom/android/phone/PhoneUtils;->audioRecStop()V
 +
-     iget-object v9, p0, Lcom/android/phone/MiuiInCallScreen;->mCallRecorder:Landroid/media/MediaRecorder;
+     iget-object v10, p0, Lcom/android/phone/MiuiInCallScreen;->mCallRecorder:Landroid/media/MediaRecorder;
  
-     invoke-virtual {v9}, Landroid/media/MediaRecorder;->reset()V
+     invoke-virtual {v10}, Landroid/media/MediaRecorder;->reset()V
 @@ -936,6 +938,8 @@
  
      if-eqz v0, :cond_5
