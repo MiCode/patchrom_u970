@@ -2735,7 +2735,7 @@
 
     move/from16 v1, p1
 
-    invoke-virtual {v0, v1, v3, v2}, Lcom/android/internal/telephony/AdnCacheManager;->handleUpdateAdnRecord(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;)V
+    invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/AdnCacheManager;->handleUpdateAdnRecord(ILcom/android/internal/telephony/AdnRecord;Lcom/android/internal/telephony/AdnRecord;)V
 
     move-object/from16 v0, p0
 
