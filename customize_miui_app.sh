@@ -58,7 +58,7 @@ if [ $1 = "Phone" ];then
     $XMLMERGYTOOL $1/res/values-zh-rCN $2/res/values-zh-rCN
 
     file=out/$1/res/values/public.xml 
-    sed "s#</resources>#    <public type=\"string\" name=\"mmiNwTerminited\" id=\"0x7f0c03f3\" />\n</resources>#" $file > tmp.file
+    sed "s#</resources>#    <public type=\"string\" name=\"mmiNwTerminited\" id=\"0x7f0c03fb\" />\n</resources>#" $file > tmp.file
     mv  tmp.file out/$1/res/values/public.xml
 fi
 

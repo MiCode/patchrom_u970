@@ -104,7 +104,7 @@ Subject: [PATCH] add MmiCode state: NW_TERMINITED
  
 +    .end local v12           #text:Ljava/lang/CharSequence;
 +    :pswitch_4
-+    const v14, 0x7f0c03f3
++    const v14, 0x7f0c03fb
 +
 +    move-object/from16 v0, p1
 +
