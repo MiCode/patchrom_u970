@@ -22,7 +22,7 @@ local-phone-apps := ApplicationsProvider BackupRestoreConfirmation Bluetooth Cam
           DefaultContainerService DrmProvider LatinIME Emode \
           FmRadio HTMLViewer KeyChain LiveWallpapers LiveWallpapersPicker MediaProvider NoiseField  \
           PicoTts SettingsProvider SharedStorageBackup \
-          Stk UserDictionaryProvider VpnDialogs \
+          Stk UserDictionaryProvider 
 
 # ProjectMenuAct MMITest_II MMITest_record OkbService
 # To include the local targets before and after zip the final ZIP file,  
