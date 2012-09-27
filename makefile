@@ -54,3 +54,5 @@ local-zip-misc:
 	cp other/installd $(ZIP_DIR)/system/bin/installd
 	cp other/miuiapp $(ZIP_DIR)/system/bin/miuiapp
 
+	@echo use miui presetting
+	cp other/presetting.apk $(ZIP_DIR)/system/app/
