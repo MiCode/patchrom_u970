@@ -5,5 +5,4 @@
     <string name="preferred_network_type_pref_entries_td_only_miui">TD Only</string>
     <string name="preferred_network_type_pref_entries_gsm_preferred_miui">GSM Preferred</string>
 	<string name="preferred_network_type_gsm_umts_miui">GSM/TD-SCDMA</string>
-    <string name="mmiNwTerminited">USSD session terminated by network</string>
 </resources>

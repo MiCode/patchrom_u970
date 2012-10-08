@@ -1614,9 +1614,9 @@
     invoke-static {v6, v8}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 1192
-    if-nez v2, :cond_8
+    if-nez v2, :cond_2
 
-    if-eqz p2, :cond_8
+    if-eqz p2, :cond_2
 
     .line 1194
     invoke-static {p2, v3, p0}, Lcom/android/internal/telephony/gsm/GsmMmiCode;->newNetworkInitiatedUssd(Ljava/lang/String;ZLcom/android/internal/telephony/gsm/GSMPhone;)Lcom/android/internal/telephony/gsm/GsmMmiCode;
