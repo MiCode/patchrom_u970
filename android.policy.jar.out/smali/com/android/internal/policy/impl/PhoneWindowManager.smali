@@ -7455,7 +7455,7 @@
 
     :cond_miui_add1
 
-    const/4 v20, 0x2
+    const/16 v20, 0x2
 
     :goto_miui_add1
 
@@ -8309,26 +8309,6 @@
 
     invoke-direct {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->interceptPowerKeyDown(Z)V
 
-    iget-object v18, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    if-eqz v18, :cond_0
-
-    iget-object v18, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
-
-    new-instance v19, Landroid/content/Intent;
-
-    const-string v20, "android.intent.action.KEYCODE_POWER_UP"
-
-    move-object/from16 v0, v19
-    
-    move-object/from16 v1, v20
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    move-object/from16 v1, v18
-    
-    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
     goto/16 :goto_3
 
     .line 2923
@@ -8438,6 +8418,30 @@
     move-object/from16 v1, p0
 
     iput-boolean v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mPendingPowerKeyUpCanceled:Z
+
+    iget-object v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    move/from16 v19, v10
+
+    if-eqz v19, :cond_0
+
+    iget-object v0, v1, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    move-object/from16 v19, v0
+
+    new-instance v20, Landroid/content/Intent;
+
+    const-string v21, "android.intent.action.KEYCODE_POWER_UP"
+
+    move-object/from16 v0, v20
+
+    move-object/from16 v1, v21
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    move-object/from16 v1, v19
+
+    invoke-virtual {v1, v0}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
     goto/16 :goto_3
 

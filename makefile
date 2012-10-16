@@ -39,8 +39,8 @@ include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
 local-zip-misc:
-	cp other/boot-b04.img $(ZIP_DIR)/boot.img
-	cp other/build-b04.prop $(ZIP_DIR)/system/build.prop
+	cp other/boot-b05.img $(ZIP_DIR)/boot.img
+	cp other/build-b05.prop $(ZIP_DIR)/system/build.prop
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 
 	@echo update bootanimation
