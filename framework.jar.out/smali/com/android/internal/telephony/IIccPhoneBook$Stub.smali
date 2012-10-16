@@ -72,6 +72,9 @@
 
 .field static final TRANSACTION_updateEmailRecordsInEfBySearch:I = 0xb
 
+.field static final TRANSACTION_getFreeAdn:I = 0x18
+
+.field static final TRANSACTION_getAdnCapacity:I = 0x19
 
 # direct methods
 .method public constructor <init>()V
@@ -1335,18 +1338,65 @@
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 342
     const/4 v2, 0x1
 
     goto/16 :goto_0
 
-    .line 341
     :cond_9
     const/4 v2, 0x0
 
     goto :goto_a
 
-    .line 51
+    .end local v19           #_result:I
+    :sswitch_18
+    const-string v2, "com.android.internal.telephony.IIccPhoneBook"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->getFreeAdn()I
+
+    move-result v19
+
+    .local v19, _result:I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .end local v19           #_result:I
+    :sswitch_19
+    const-string v2, "com.android.internal.telephony.IIccPhoneBook"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->getAdnCapacity()I
+
+    move-result v19
+
+    .local v19, _result:I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    move-object/from16 v0, p3
+
+    move/from16 v1, v19
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
     nop
 
     :sswitch_data_0
@@ -1374,6 +1424,8 @@
         0x15 -> :sswitch_15
         0x16 -> :sswitch_16
         0x17 -> :sswitch_17
+        0x18 -> :sswitch_18
+        0x19 -> :sswitch_19
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

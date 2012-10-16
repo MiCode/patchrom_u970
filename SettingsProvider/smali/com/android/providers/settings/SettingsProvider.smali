@@ -2012,6 +2012,10 @@
     .locals 13
     .parameter "uri"
     .parameter "mode"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;
@@ -2067,24 +2071,25 @@
     invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
+    if-nez v0, :cond_0
 
+    invoke-static {v12}, Landroid/media/ExtraRingtoneManager;->isExtraCases(Landroid/net/Uri;)Z
+
+    move-result v0
+ 
     if-eqz v0, :cond_2
 
-    .line 682
     :cond_0
     if-eqz v10, :cond_1
 
-    .line 687
     :try_start_0
     invoke-static {v7}, Landroid/provider/DrmStore;->enforceAccessDrmPermission(Landroid/content/Context;)V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 693
-    :cond_1
+    :goto_0
     const/4 v1, 0x0
 
-    .line 695
     .local v1, pfd:Landroid/os/ParcelFileDescriptor;
     :try_start_1
     invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -2112,7 +2117,7 @@
     .end local v7           #context:Landroid/content/Context;
     .end local v10           #isDrmAuthority:Z
     .end local v12           #soundUri:Landroid/net/Uri;
-    :goto_0
+    :goto_1
     return-object v0
 
     .line 688
@@ -2135,13 +2140,19 @@
 
     throw v0
 
-    .line 697
     .end local v8           #e:Ljava/lang/SecurityException;
+    :cond_1
+
+    invoke-static {v12, v11}, Landroid/media/ExtraRingtoneManager;->getUriForExtraCases(Landroid/net/Uri;I)Landroid/net/Uri;
+
+    move-result-object v12
+
+    goto :goto_0
+ 
     .restart local v1       #pfd:Landroid/os/ParcelFileDescriptor;
     :catch_1
     move-exception v0
 
-    .line 703
     .end local v1           #pfd:Landroid/os/ParcelFileDescriptor;
     :cond_2
     :try_start_2
@@ -2151,7 +2162,7 @@
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 704
     :catch_2
@@ -2169,7 +2180,7 @@
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_1
 
     .line 713
     .end local v6           #authority:Ljava/lang/String;
@@ -2190,13 +2201,17 @@
 
     move-result-object v0
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public openFile(Landroid/net/Uri;Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;
     .locals 8
     .parameter "uri"
     .parameter "mode"
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->CHANGE_CODE:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Ljava/io/FileNotFoundException;
@@ -2253,20 +2268,23 @@
 
     move-result v6
 
+    if-nez v6, :cond_0
+
+    invoke-static {v5}, Landroid/media/ExtraRingtoneManager;->isExtraCases(Landroid/net/Uri;)Z
+
+    move-result v6
+ 
     if-eqz v6, :cond_2
 
-    .line 641
     :cond_0
     if-eqz v3, :cond_1
 
-    .line 646
     :try_start_0
     invoke-static {v1}, Landroid/provider/DrmStore;->enforceAccessDrmPermission(Landroid/content/Context;)V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 652
-    :cond_1
+    :goto_0
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v6
@@ -2280,7 +2298,7 @@
     .end local v1           #context:Landroid/content/Context;
     .end local v3           #isDrmAuthority:Z
     .end local v5           #soundUri:Landroid/net/Uri;
-    :goto_0
+    :goto_1
     return-object v6
 
     .line 647
@@ -2303,6 +2321,15 @@
 
     throw v6
 
+    .end local v2           #e:Ljava/lang/SecurityException;
+    :cond_1
+
+    invoke-static {v5, v4}, Landroid/media/ExtraRingtoneManager;->getUriForExtraCases(Landroid/net/Uri;I)Landroid/net/Uri;
+
+    move-result-object v5
+
+    goto :goto_0
+
     .line 657
     .end local v0           #authority:Ljava/lang/String;
     .end local v1           #context:Landroid/content/Context;
@@ -2314,7 +2341,7 @@
 
     move-result-object v6
 
-    goto :goto_0
+    goto :goto_1
 .end method
 
 .method public query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;

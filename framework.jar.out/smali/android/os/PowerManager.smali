@@ -22,7 +22,7 @@
 
 .field public static final PARTIAL_WAKE_LOCK:I = 0x1
 
-.field public static final PROXIMITY_SCREEN_OFF_WAKE_LOCK:I = 0x21
+.field public static final PROXIMITY_SCREEN_OFF_WAKE_LOCK:I = 0x20
 
 .field public static final SCREEN_BRIGHT_WAKE_LOCK:I = 0xa
     .annotation runtime Ljava/lang/Deprecated;

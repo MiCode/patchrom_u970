@@ -509,17 +509,24 @@
         <item>@null</item>
     </array>
     <string-array name="config_statusBarIcons">
+        <!-- Defines the slots for miui icons. -->
+        <item>headset</item>
+        <item>call_record</item>
+        <item>privacy_mode</item>
+
         <item>ime</item>
         <item>sync_failing</item>
         <item>sync_active</item>
         <item>gps</item>
         <item>bluetooth</item>
+        <item>bluetooth_handsfree_battery</item>
         <item>nfc</item>
         <item>tty</item>
         <item>speakerphone</item>
         <item>mute</item>
         <item>volume</item>
         <item>wifi</item>
+        <item>wimax</item>
         <item>cdma_eri</item>
         <item>data_connection</item>
         <item>phone_evdo_signal</item>
@@ -584,11 +591,15 @@
     <array name="config_usbHostBlacklist" />
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>10</item>
+        <item>1</item>
+        <item>20</item>
+	<item>21</item>
     </integer-array>
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
         <item>10</item>
+        <item>20</item>
+	<item>30</item>
     </integer-array>
     <integer-array name="config_keyboardTapVibePattern">
         <item>40</item>

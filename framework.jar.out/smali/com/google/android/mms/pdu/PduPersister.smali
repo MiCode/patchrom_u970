@@ -2504,24 +2504,19 @@
 
     invoke-virtual {v5, v6, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 664
-    const/16 v6, 0x97
+    #const/16 v6, 0x97
 
-    if-ne v6, p3, :cond_0
+    #if-ne v6, p3, :cond_0
 
-    .line 665
-    const-string/jumbo v6, "name"
+    #const-string v6, "name"
 
-    invoke-virtual {v5, v6, p5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+    #invoke-virtual {v5, v6, p5}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 666
-    if-eqz p5, :cond_0
+    #if-eqz p5, :cond_0
 
-    .line 667
-    const-string p5, ""
+    #const-string p5, ""
 
-    .line 672
-    :cond_0
+    #:cond_0
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V

@@ -2867,10 +2867,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/gsm/GSMPhone;->setSystemProperty(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 907
-    if-nez v20, :cond_1a
+    invoke-static/range {v20 .. v20}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 908
+    move-result v27
+
+    if-eqz v27, :cond_1a
+
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
@@ -7615,9 +7617,7 @@
 
     .line 500
     .local v6, spn:Ljava/lang/String;
-    iget-object v9, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
-
-    invoke-virtual {v9}, Landroid/telephony/ServiceState;->getOperatorAlphaLong()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->getPlmn()Ljava/lang/String;
 
     move-result-object v2
 
@@ -7840,17 +7840,11 @@
 
     if-eqz v9, :cond_7
 
-    .line 523
     :cond_2
-    const-string v2, "China Mobile"
-
-    .line 524
     const-string v6, "CMCC"
 
-    .line 525
     const/4 v4, 0x1
 
-    .line 526
     iget-object v9, p0, Lcom/android/internal/telephony/ServiceStateTracker;->ss:Landroid/telephony/ServiceState;
 
     invoke-virtual {v9}, Landroid/telephony/ServiceState;->is3GNettype()Z
@@ -7868,7 +7862,7 @@
 
     move-result-object v9
 
-    const-string v10, " 3G"
+    const-string v10, "3G"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -7887,7 +7881,7 @@
 
     move-result-object v9
 
-    const-string v10, " 3G"
+    const-string v10, "3G"
 
     invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -8036,15 +8030,10 @@
 
     if-eqz v9, :cond_8
 
-    .line 534
-    const-string v2, "China Unicom"
-
-    .line 535
     const/4 v4, 0x1
 
     goto :goto_2
 
-    .line 537
     :cond_8
     if-eqz v2, :cond_9
 
@@ -8092,4 +8081,46 @@
     const/4 v4, 0x1
 
     goto/16 :goto_2
+.end method
+
+.method private getPlmn()Ljava/lang/String;
+    .locals 3
+    .annotation build Landroid/annotation/MiuiHook;
+        value = .enum Landroid/annotation/MiuiHook$MiuiHookType;->NEW_METHOD:Landroid/annotation/MiuiHook$MiuiHookType;
+    .end annotation
+
+    .prologue
+    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->phone:Lcom/android/internal/telephony/gsm/GSMPhone;
+
+    iget-object v1, v1, Lcom/android/internal/telephony/gsm/GSMPhone;->mIccRecords:Lcom/android/internal/telephony/IccRecords;
+
+    check-cast v1, Lcom/android/internal/telephony/gsm/SIMRecords;
+
+    iget-object v1, v1, Lcom/android/internal/telephony/gsm/SIMRecords;->mSpnOverride:Lcom/android/internal/telephony/gsm/SpnOverride;
+
+    iget-object v2, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+
+    invoke-virtual {v2}, Landroid/telephony/ServiceState;->getOperatorNumeric()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcom/android/internal/telephony/gsm/SpnOverride;->getSpn(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .local v0, plmn:Ljava/lang/String;
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->ss:Landroid/telephony/ServiceState;
+
+    invoke-virtual {v1}, Landroid/telephony/ServiceState;->getOperatorAlphaLong()Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_0
+    return-object v0
 .end method
