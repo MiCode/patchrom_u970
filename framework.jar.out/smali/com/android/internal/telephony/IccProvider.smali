@@ -8,7 +8,7 @@
 
 .field private static final ADN:I = 0x1
 
-.field static final DBG:Z = false
+.field private static final DBG:Z = false
 
 .field private static final FDN:I = 0x2
 
@@ -32,7 +32,7 @@
 
 .field private static final TAG:Ljava/lang/String; = "IccProvider"
 
-.field static final URL_MATCHER:Landroid/content/UriMatcher;
+.field private static final URL_MATCHER:Landroid/content/UriMatcher;
 
 
 # direct methods
@@ -787,7 +787,7 @@
     goto :goto_1
 .end method
 
-.method log(Ljava/lang/String;)V
+.method private log(Ljava/lang/String;)V
     .locals 3
     .parameter "msg"
 
@@ -820,57 +820,21 @@
 .end method
 
 .method private normalizeValue(Ljava/lang/String;)Ljava/lang/String;
-    .locals 4
+    .locals 2
     .parameter "inVal"
 
     .prologue
-    const/16 v3, 0x27
-
-    .line 166
+    .line 263
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 167
+    .line 264
     .local v0, len:I
     move-object v1, p1
 
-    .line 169
+    .line 270
     .local v1, retVal:Ljava/lang/String;
-    const/4 v2, 0x1
-
-    if-gt v0, v2, :cond_miui_add1
-
-    return-object v1
-
-    :cond_miui_add1
-    const/4 v2, 0x0
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    if-ne v2, v3, :cond_0
-
-    add-int/lit8 v2, v0, -0x1
-
-    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
-
-    move-result v2
-
-    if-ne v2, v3, :cond_0
-
-    .line 170
-    const/4 v2, 0x1
-
-    add-int/lit8 v3, v0, -0x1
-
-    invoke-virtual {p1, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 173
-    :cond_0
     return-object v1
 .end method
 
@@ -1168,6 +1132,11 @@
     move/from16 v0, v20
 
     if-ne v2, v0, :cond_1
+
+    .line 326
+    const/4 v2, 0x2
+
+    if-ne v13, v2, :cond_2
 
     .line 327
     const/4 v2, 0x1

@@ -270,7 +270,7 @@
     <string name="screen_lock">屏幕锁定</string>
     <string name="power_off">关机</string>
     <string name="shutdown_progress">正在关机...</string>
-    <string name="shutdown_confirm">您的手机会关闭。</string>
+    <string name="shutdown_confirm">您的平板电脑会关闭。</string>
     <string name="shutdown_confirm_question">您要关机吗？</string>
     <string name="reboot_confirm_question">您要重启吗？</string>
     <string name="recent_tasks_title">近期任务</string>

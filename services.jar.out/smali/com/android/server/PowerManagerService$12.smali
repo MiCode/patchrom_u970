@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 2937
+    .line 2939
     iput-object p1, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 6
 
     .prologue
-    .line 2940
+    .line 2942
     iget-object v0, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
 
     #getter for: Lcom/android/server/PowerManagerService;->mScreenBrightness:Lcom/android/server/PowerManagerService$BrightnessState;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v2, v3, v0, v1, v4}, Lcom/android/server/PowerManagerService$BrightnessState;->setTargetLockedSensor(IIII)V
 
-    .line 2943
+    .line 2945
     iget-object v0, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v1, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
@@ -119,7 +119,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->mLcdValue:I
     invoke-static {v0, v1}, Lcom/android/server/PowerManagerService;->access$6202(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2944
+    .line 2946
     iget-object v0, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v1, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
@@ -132,7 +132,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->formerValue:I
     invoke-static {v0, v1}, Lcom/android/server/PowerManagerService;->access$6302(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2946
+    .line 2948
     iget-object v0, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
 
     iget-object v1, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
@@ -145,7 +145,7 @@
     #setter for: Lcom/android/server/PowerManagerService;->realValue:I
     invoke-static {v0, v1}, Lcom/android/server/PowerManagerService;->access$6402(Lcom/android/server/PowerManagerService;I)I
 
-    .line 2948
+    .line 2950
     iget-object v0, p0, Lcom/android/server/PowerManagerService$12;->this$0:Lcom/android/server/PowerManagerService;
 
     const/4 v1, 0x0
@@ -153,10 +153,10 @@
     #setter for: Lcom/android/server/PowerManagerService;->startF:Z
     invoke-static {v0, v1}, Lcom/android/server/PowerManagerService;->access$6502(Lcom/android/server/PowerManagerService;Z)Z
 
-    .line 2950
+    .line 2952
     return-void
 
-    .line 2940
+    .line 2942
     :cond_0
     const-wide v0, 0x3ff199999999999aL
 

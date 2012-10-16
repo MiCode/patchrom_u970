@@ -109,7 +109,7 @@
         0x6 -> :sswitch_0
         0xa -> :sswitch_0
         0x1a -> :sswitch_0
-        0x20 -> :sswitch_0
+        0x21 -> :sswitch_0
     .end sparse-switch
 .end method
 

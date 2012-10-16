@@ -4469,12 +4469,12 @@
     .parameter "s"
 
     .prologue
-    .line 3667
+    .line 3671
     const-string v0, "WifiStateMachine"
 
     invoke-static {v0, p1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3668
+    .line 3672
     return-void
 .end method
 
@@ -4483,12 +4483,12 @@
     .parameter "s"
 
     .prologue
-    .line 3671
+    .line 3675
     const-string v0, "WifiStateMachine"
 
     invoke-static {v0, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3672
+    .line 3676
     return-void
 .end method
 
@@ -6130,7 +6130,7 @@
     .locals 1
 
     .prologue
-    .line 3676
+    .line 3680
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mDisconnectWhileSupplicantStopping:Z
 
     return v0
@@ -6140,7 +6140,7 @@
     .locals 3
 
     .prologue
-    .line 3687
+    .line 3691
     const-string v0, "WifiStateMachine"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6165,7 +6165,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3688
+    .line 3692
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mDriverStopCmdSent:Z
 
     return v0
@@ -6352,15 +6352,15 @@
     .parameter "value"
 
     .prologue
-    .line 3679
+    .line 3683
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mDisconnectWhileSupplicantStopping:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 3680
+    .line 3684
     iput-boolean p1, p0, Landroid/net/wifi/WifiStateMachine;->mDisconnectWhileSupplicantStopping:Z
 
-    .line 3682
+    .line 3686
     :cond_0
     return-void
 .end method
@@ -6413,7 +6413,7 @@
     .parameter "value"
 
     .prologue
-    .line 3691
+    .line 3695
     const-string v0, "WifiStateMachine"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -6448,15 +6448,15 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3692
+    .line 3696
     iget-boolean v0, p0, Landroid/net/wifi/WifiStateMachine;->mDriverStopCmdSent:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 3693
+    .line 3697
     iput-boolean p1, p0, Landroid/net/wifi/WifiStateMachine;->mDriverStopCmdSent:Z
 
-    .line 3695
+    .line 3699
     :cond_0
     return-void
 .end method

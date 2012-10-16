@@ -811,31 +811,35 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->alphaTag:Ljava/lang/String;
 
+    .line 756
     array-length v3, p1
 
     add-int/lit8 v1, v3, -0xe
 
+    .line 758
     .local v1, footerOffset:I
     aget-byte v3, p1, v1
 
     and-int/lit16 v2, v3, 0xff
 
+    .line 760
     .local v2, numberLength:I
-    goto :cond_0
-
     const/16 v3, 0xb
 
     if-le v2, v3, :cond_0
 
+    .line 762
     const-string v3, ""
 
     iput-object v3, p0, Lcom/android/internal/telephony/AdnRecord;->number:Ljava/lang/String;
 
+    .line 798
     .end local v1           #footerOffset:I
     .end local v2           #numberLength:I
     :goto_0
     return-void
 
+    .line 773
     .restart local v1       #footerOffset:I
     .restart local v2       #numberLength:I
     :cond_0

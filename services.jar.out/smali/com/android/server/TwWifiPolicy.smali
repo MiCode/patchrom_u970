@@ -812,23 +812,28 @@
 
     invoke-virtual {v1, v5, v7}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 279
     :cond_2
     const-string v5, "android.settings.DataConncetDialog"
 
     invoke-virtual {v1, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 280
     const-string v5, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v5}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 281
     const/high16 v5, 0x1000
 
     invoke-virtual {v1, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
+    .line 282
     iget-object v5, p0, Lcom/android/server/TwWifiPolicy;->mContext:Landroid/content/Context;
 
-    #invoke-virtual {v5, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v5, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
+    .line 283
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v7
@@ -997,31 +1002,38 @@
 
     if-eqz v5, :cond_7
 
+    .line 392
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
+    .line 393
     .local v2, disConnectDialog:Landroid/content/Intent;
     const-string v5, "android.settings.WifiDisConnectDialog"
 
     invoke-virtual {v2, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 394
     const-string v5, "android.intent.category.DEFAULT"
 
     invoke-virtual {v2, v5}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 395
     const/high16 v5, 0x1000
 
     invoke-virtual {v2, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
+    .line 396
     iget-object v5, p0, Lcom/android/server/TwWifiPolicy;->mContext:Landroid/content/Context;
 
-    #invoke-virtual {v5, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v5, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
+    .line 397
     const/4 v5, 0x1
 
     sput-boolean v5, Lcom/android/server/TwWifiPolicy;->isConnectWifi:Z
 
+    .line 400
     .end local v2           #disConnectDialog:Landroid/content/Intent;
     .end local v4           #wlanPreferValue:Ljava/lang/String;
     :cond_7
@@ -2280,31 +2292,38 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 465
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
+    .line 466
     .local v0, networkTypeDialogIntent:Landroid/content/Intent;
     const-string v2, "android.settings.NetWorkTypeDialog"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 467
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
+    .line 468
     const/high16 v2, 0x1000
 
     invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
+    .line 469
     iget-object v2, p0, Lcom/android/server/TwWifiPolicy;->mContext:Landroid/content/Context;
 
-    #invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v2, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
+    .line 470
     sput-boolean v6, Lcom/android/server/TwWifiPolicy;->isConnectWifi:Z
 
     goto/16 :goto_0
 
+    .line 448
     .end local v0           #networkTypeDialogIntent:Landroid/content/Intent;
     .end local v1           #showNetworkTypeDialog:I
     :cond_4
