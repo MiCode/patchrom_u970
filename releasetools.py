@@ -18,5 +18,18 @@ def AddAssertions(info):
 def FullOTA_InstallEnd(info):
     AddAssertions(info)
 
+    info.script.Print("Writing image blob...")
+    info.script.AppendExtra('nv_copy_blob_file("blob", "/staging");')
+    return
+
 def IncrementalOTA_InstallEnd(info):
     AddAssertions(info) 
+
+    source_file = info.source_zip.read("RADIO/blob")
+    target_file = info.target_zip.read("RADIO/blob")
+    if source_file != target_file:
+        info.script.Print("Writing image blob...")
+        info.script.AppendExtra('nv_copy_blob_file("blob", "/staging");')
+    else:
+        print "blob image unchanged; skipping"
+    return
