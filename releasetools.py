@@ -3,11 +3,6 @@ import edify_generator
 import os
 import re
 
-def WriteRawImage(info, *args):
-    info.script.Print("Updating BOOT Image...")
-    info.script.AppendExtra('package_extract_file("boot.img", "/dev/block/platform/sdhci-tegra.3/by-name/LNX");')
-    return True
-
 def AddAssertions(info):
     edify = info.script
     for i in xrange(len(edify.script)):
@@ -16,20 +11,26 @@ def AddAssertions(info):
             return
 
 def FullOTA_InstallEnd(info):
+    try:
+        input_blob = info.input_zip.read("RADIO/blob")
+        common.ZipWriteStr(info.output_zip, "blob", input_blob)
+        info.script.AppendExtra('nv_copy_blob_file("blob", "/staging");')
+    except KeyError:
+        print "no blob in target_files; skipping install"
     AddAssertions(info)
 
-    info.script.Print("Writing image blob...")
-    info.script.AppendExtra('nv_copy_blob_file("blob", "/staging");')
-    return
-
 def IncrementalOTA_InstallEnd(info):
-    AddAssertions(info) 
-
-    source_file = info.source_zip.read("RADIO/blob")
-    target_file = info.target_zip.read("RADIO/blob")
-    if source_file != target_file:
-        info.script.Print("Writing image blob...")
-        info.script.AppendExtra('nv_copy_blob_file("blob", "/staging");')
-    else:
-        print "blob image unchanged; skipping"
-    return
+     try:
+        target_blob = info.target_zip.read("RADIO/blob")
+        try:
+            source_blob = info.source_zip.read("RADIO/blob")
+        except KeyError:
+            source_blob = None
+        if target_blob == source_blob:
+            print "blob unchanged; skipping"
+        else:
+            common.ZipWriteStr(info.output_zip, "blob", target_blob)
+            info.script.AppendExtra('nv_copy_blob_file("blob", "/staging");')
+     except KeyError:
+        print "no blob in target_files; skipping install"
+     AddAssertions(info)
