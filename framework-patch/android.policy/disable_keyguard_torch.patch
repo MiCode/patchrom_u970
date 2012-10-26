@@ -1,0 +1,24 @@
+From 55334357549cd069640eb6f94b4c72c1c53cbbf5 Mon Sep 17 00:00:00 2001
+From: yumingyang <yumingyang@xiaomi.com>
+Date: Fri, 26 Oct 2012 11:21:07 +0800
+Subject: [PATCH] disable keyguard torch
+
+---
+ .../policy/impl/MiuiPhoneWindowManager.smali       |    3 +++
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+--- a/smali/com/android/internal/policy/impl/MiuiPhoneWindowManager.smali
++++ b/smali/com/android/internal/policy/impl/MiuiPhoneWindowManager.smali
+@@ -459,6 +459,9 @@
+     const/4 v0, 0x1
+ 
+     :goto_0
++    #return false
++    const/4 v0, 0x0
++
+     return v0
+ 
+     :cond_0
+-- 
+1.7.1
+
