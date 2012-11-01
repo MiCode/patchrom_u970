@@ -10,8 +10,7 @@ GIT_APPLY=$PORT_ROOT/tools/git.apply
 echo "original dir: $2"
 echo "target dir:$1"
 if [ $1 = "MiuiSystemUI" ];then
-	$XMLMERGYTOOL $1/res/values $2/res/values
-        patch $2/AndroidManifest.xml < $1/AndroidManifest.xml.diff
+    patch $2/AndroidManifest.xml < $1/AndroidManifest.xml.diff
 fi
 
 if [ $1 = "Mms" ];then
