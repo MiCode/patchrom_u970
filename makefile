@@ -39,8 +39,8 @@ include $(PORT_BUILD)/porting.mk
 
 # To define any local-target
 local-zip-misc:
-	cp other/boot-b05.img $(ZIP_DIR)/boot.img
-	cp other/build-b05.prop $(ZIP_DIR)/system/build.prop
+	cp other/boot-b06.img $(ZIP_DIR)/boot.img
+	cp other/build-b06.prop $(ZIP_DIR)/system/build.prop
 	cp other/StockSettings.apk $(ZIP_DIR)/system/app/
 
 	@echo update bootanimation
@@ -53,6 +53,7 @@ local-zip-misc:
 	@echo use orignal installd
 	cp other/installd $(ZIP_DIR)/system/bin/installd
 	cp other/miuiapp $(ZIP_DIR)/system/bin/miuiapp
+	cp other/miuiserver_run_in_initrc $(ZIP_DIR)/system/bin/
 
 	@echo use miui presetting
 	cp other/presetting.apk $(ZIP_DIR)/system/app/

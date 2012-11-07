@@ -61,7 +61,7 @@
     .parameter "pdus"
 
     .prologue
-    .line 1007
+    .line 1010
     const-string v2, "WAP PUSH"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -88,7 +88,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1010
+    .line 1013
     const-string v2, "WAP PUSH"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -111,7 +111,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1011
+    .line 1014
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -134,7 +134,7 @@
 
     move-result-object v1
 
-    .line 1012
+    .line 1015
     .local v1, uri:Landroid/net/Uri;
     const-string v2, "WAP PUSH"
 
@@ -158,30 +158,30 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1014
+    .line 1017
     new-instance v0, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.DATA_SMS_RECEIVED"
 
     invoke-direct {v0, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1017
+    .line 1020
     .local v0, intent:Landroid/content/Intent;
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1018
+    .line 1021
     const-string/jumbo v2, "pdus"
 
     invoke-virtual {v0, v2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 1020
+    .line 1023
     iget-object v2, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     const-string v3, "android.permission.RECEIVE_SMS"
 
     invoke-virtual {v2, v0, v3}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 1022
+    .line 1025
     return-void
 .end method
 
@@ -193,7 +193,7 @@
     .parameter "dataIndex"
 
     .prologue
-    .line 979
+    .line 982
     const-string v1, "WAP PUSH"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -220,32 +220,32 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 982
+    .line 985
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.provider.Telephony.WAP_PUSH_RECEIVED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 983
+    .line 986
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 984
+    .line 987
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 985
+    .line 988
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     const-string v2, "android.permission.RECEIVE_WAP_PUSH"
 
     invoke-virtual {v1, v0, v2}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 987
+    .line 990
     return-void
 .end method
 
@@ -257,7 +257,7 @@
     .parameter "dataIndex"
 
     .prologue
-    .line 993
+    .line 996
     const-string v1, "WAP PUSH"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -284,32 +284,32 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 996
+    .line 999
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.provider.Telephony.WAP_PUSH_RECEIVED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 997
+    .line 1000
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 998
+    .line 1001
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 999
+    .line 1002
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     const-string v2, "android.permission.RECEIVE_WAP_PUSH"
 
     invoke-virtual {v1, v0, v2}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 1001
+    .line 1004
     return-void
 .end method
 
@@ -514,25 +514,26 @@
 
     move/from16 v22, v0
 
-    .line 422
+    .line 423
     .local v22, wbxml_version:I
     const/16 v23, 0x1
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v22
+    move/from16 v1, v23
 
-    if-eq v0, v1, :cond_0
+    if-lt v0, v1, :cond_0
 
-    const/16 v23, 0x2
+    const/16 v23, 0x3
 
-    move/from16 v0, v23
+    move/from16 v0, v22
 
-    move/from16 v1, v22
+    move/from16 v1, v23
 
-    if-eq v0, v1, :cond_0
+    if-le v0, v1, :cond_1
 
-    .line 423
+    .line 425
+    :cond_0
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -557,21 +558,21 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 424
+    .line 426
     const/16 v23, 0x0
 
     move v11, v12
 
-    .line 738
+    .line 741
     .end local v12           #index:I
     .restart local v11       #index:I
     :goto_0
     return v23
 
-    .line 427
+    .line 430
     .end local v11           #index:I
     .restart local v12       #index:I
-    :cond_0
+    :cond_1
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -598,7 +599,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 429
+    .line 432
     new-instance v23, Lcom/android/internal/telephony/WspTypeDecoder;
 
     move-object/from16 v0, v23
@@ -611,7 +612,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
 
-    .line 432
+    .line 435
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -624,9 +625,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_1
+    if-nez v23, :cond_2
 
-    .line 433
+    .line 436
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -651,7 +652,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 434
+    .line 437
     const/16 v23, 0x0
 
     move v11, v12
@@ -660,10 +661,10 @@
     .restart local v11       #index:I
     goto :goto_0
 
-    .line 436
+    .line 439
     .end local v11           #index:I
     .restart local v12       #index:I
-    :cond_1
+    :cond_2
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -674,7 +675,7 @@
 
     move-result-wide v17
 
-    .line 437
+    .line 440
     .local v17, publicId:J
     move-object/from16 v0, p0
 
@@ -688,16 +689,16 @@
 
     add-int/lit8 v11, v23, 0x1
 
-    .line 438
+    .line 441
     .end local v12           #index:I
     .restart local v11       #index:I
     const-wide/16 v23, 0x5
 
     cmp-long v23, v23, v17
 
-    if-eqz v23, :cond_2
+    if-eqz v23, :cond_3
 
-    .line 439
+    .line 442
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -722,13 +723,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 440
+    .line 443
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 444
-    :cond_2
+    .line 447
+    :cond_3
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -741,9 +742,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_3
+    if-nez v23, :cond_4
 
-    .line 445
+    .line 448
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -768,13 +769,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 446
+    .line 449
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 448
-    :cond_3
+    .line 451
+    :cond_4
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -785,7 +786,7 @@
 
     move-result-wide v7
 
-    .line 449
+    .line 452
     .local v7, charSet:J
     move-object/from16 v0, p0
 
@@ -799,20 +800,20 @@
 
     add-int v11, v11, v23
 
-    .line 451
+    .line 454
     const-wide/16 v23, 0x6a
 
     cmp-long v23, v23, v7
 
-    if-eqz v23, :cond_4
+    if-eqz v23, :cond_5
 
     const-wide/16 v23, 0x4
 
     cmp-long v23, v23, v7
 
-    if-eqz v23, :cond_4
+    if-eqz v23, :cond_5
 
-    .line 452
+    .line 455
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -837,13 +838,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 453
+    .line 456
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 458
-    :cond_4
+    .line 461
+    :cond_5
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -856,9 +857,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_5
+    if-nez v23, :cond_6
 
-    .line 459
+    .line 462
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -883,13 +884,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 460
+    .line 463
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 462
-    :cond_5
+    .line 465
+    :cond_6
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -900,7 +901,7 @@
 
     move-result-wide v20
 
-    .line 463
+    .line 466
     .local v20, table_strlen:J
     move-object/from16 v0, p0
 
@@ -914,14 +915,14 @@
 
     add-int v11, v11, v23
 
-    .line 464
+    .line 467
     const-wide/16 v23, 0x0
 
     cmp-long v23, v23, v20
 
-    if-eqz v23, :cond_6
+    if-eqz v23, :cond_7
 
-    .line 465
+    .line 468
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -946,13 +947,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 466
+    .line 469
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 469
-    :cond_6
+    .line 472
+    :cond_7
     int-to-long v0, v11
 
     move-wide/from16 v23, v0
@@ -963,7 +964,7 @@
 
     long-to-int v11, v0
 
-    .line 471
+    .line 474
     array-length v0, v10
 
     move/from16 v23, v0
@@ -972,9 +973,9 @@
 
     move/from16 v0, v23
 
-    if-lt v11, v0, :cond_7
+    if-lt v11, v0, :cond_8
 
-    .line 472
+    .line 475
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -999,13 +1000,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 473
+    .line 476
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 477
-    :cond_7
+    .line 480
+    :cond_8
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1020,7 +1021,7 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 478
+    .line 481
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1035,7 +1036,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 479
+    .line 482
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1050,7 +1051,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->NotifyText:Ljava/lang/String;
 
-    .line 480
+    .line 483
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1065,7 +1066,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->si_id:Ljava/lang/String;
 
-    .line 481
+    .line 484
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1076,7 +1077,7 @@
 
     iput-wide v7, v0, Lcom/android/internal/telephony/WspTypeDecoder;->CharSet:J
 
-    .line 483
+    .line 486
     aget-byte v23, v10, v11
 
     move/from16 v0, v23
@@ -1087,7 +1088,7 @@
 
     shr-int/lit8 v6, v23, 0x7
 
-    .line 484
+    .line 487
     .local v6, attrTag:I
     aget-byte v23, v10, v11
 
@@ -1095,21 +1096,21 @@
 
     shr-int/lit8 v9, v23, 0x6
 
-    .line 485
+    .line 488
     .local v9, conTag:I
     aget-byte v23, v10, v11
 
     and-int/lit8 v4, v23, 0x3f
 
-    .line 486
+    .line 489
     .local v4, SI_tag:I
     const/16 v23, 0x5
 
     move/from16 v0, v23
 
-    if-eq v0, v4, :cond_8
+    if-eq v0, v4, :cond_9
 
-    .line 487
+    .line 490
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1134,21 +1135,21 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 488
+    .line 491
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 490
-    :cond_8
+    .line 493
+    :cond_9
     add-int v19, v6, v9
 
-    .line 491
+    .line 494
     .local v19, siEndTagCount:I
     add-int/lit8 v11, v11, 0x1
 
-    .line 493
-    :cond_9
+    .line 496
+    :cond_a
     :goto_1
     array-length v0, v10
 
@@ -1156,19 +1157,19 @@
 
     move/from16 v0, v23
 
-    if-ge v11, v0, :cond_1d
+    if-ge v11, v0, :cond_1e
 
-    if-lez v19, :cond_1d
+    if-lez v19, :cond_1e
 
-    .line 495
+    .line 498
     aget-byte v23, v10, v11
 
     and-int/lit8 v4, v23, 0x3f
 
-    .line 496
+    .line 499
     sparse-switch v4, :sswitch_data_0
 
-    .line 694
+    .line 697
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1193,12 +1194,12 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 695
+    .line 698
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 498
+    .line 501
     :sswitch_0
     aget-byte v23, v10, v11
 
@@ -1208,9 +1209,9 @@
 
     move/from16 v23, v0
 
-    if-eqz v23, :cond_a
+    if-eqz v23, :cond_b
 
-    .line 499
+    .line 502
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1235,22 +1236,22 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 500
+    .line 503
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 502
-    :cond_a
+    .line 505
+    :cond_b
     add-int/lit8 v11, v11, 0x1
 
-    .line 503
+    .line 506
     add-int/lit8 v19, v19, -0x1
 
-    .line 504
+    .line 507
     goto :goto_1
 
-    .line 506
+    .line 509
     :sswitch_1
     aget-byte v23, v10, v11
 
@@ -1262,25 +1263,25 @@
 
     shr-int/lit8 v6, v23, 0x7
 
-    .line 507
+    .line 510
     aget-byte v23, v10, v11
 
     and-int/lit8 v23, v23, 0x40
 
     shr-int/lit8 v9, v23, 0x6
 
-    .line 508
+    .line 511
     add-int v23, v6, v9
 
     move/from16 v0, v23
 
     int-to-long v13, v0
 
-    .line 509
+    .line 512
     .local v13, indicationEndTagcount:J
     add-int/lit8 v11, v11, 0x1
 
-    .line 510
+    .line 513
     :goto_2
     array-length v0, v10
 
@@ -1290,26 +1291,26 @@
 
     move/from16 v0, v23
 
-    if-gt v11, v0, :cond_9
+    if-gt v11, v0, :cond_a
 
     const-wide/16 v23, 0x0
 
     cmp-long v23, v13, v23
 
-    if-lez v23, :cond_9
+    if-lez v23, :cond_a
 
-    .line 511
+    .line 514
     aget-byte v23, v10, v11
 
     move/from16 v0, v23
 
     and-int/lit16 v5, v0, 0xff
 
-    .line 512
+    .line 515
     .local v5, attrId:I
     packed-switch v5, :pswitch_data_0
 
-    .line 673
+    .line 676
     :pswitch_0
     const-string v23, "WAP PUSH"
 
@@ -1335,24 +1336,24 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 674
+    .line 677
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 514
+    .line 517
     :pswitch_1
     const-wide/16 v23, 0x1
 
     sub-long v13, v13, v23
 
-    .line 515
+    .line 518
     add-int/lit8 v11, v11, 0x1
 
-    .line 516
+    .line 519
     goto :goto_2
 
-    .line 518
+    .line 521
     :pswitch_2
     aget-byte v23, v10, v11
 
@@ -1362,9 +1363,9 @@
 
     move/from16 v23, v0
 
-    if-eqz v23, :cond_b
+    if-eqz v23, :cond_c
 
-    .line 519
+    .line 522
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1389,23 +1390,23 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 520
+    .line 523
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 522
-    :cond_b
+    .line 525
+    :cond_c
     add-int/lit8 v11, v11, 0x1
 
-    .line 526
+    .line 529
     const-wide/16 v23, 0x4
 
     cmp-long v23, v23, v7
 
-    if-nez v23, :cond_c
+    if-nez v23, :cond_d
 
-    .line 527
+    .line 530
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1418,9 +1419,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_d
+    if-nez v23, :cond_e
 
-    .line 528
+    .line 531
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1445,13 +1446,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 529
+    .line 532
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 532
-    :cond_c
+    .line 535
+    :cond_d
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1464,9 +1465,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_d
+    if-nez v23, :cond_e
 
-    .line 533
+    .line 536
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1491,13 +1492,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 534
+    .line 537
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 537
-    :cond_d
+    .line 540
+    :cond_e
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1520,7 +1521,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->NotifyText:Ljava/lang/String;
 
-    .line 538
+    .line 541
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1533,10 +1534,10 @@
 
     add-int v11, v11, v23
 
-    .line 539
+    .line 542
     goto/16 :goto_2
 
-    .line 542
+    .line 545
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -1558,13 +1559,13 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 543
+    .line 546
     add-int/lit8 v11, v11, 0x1
 
-    .line 544
+    .line 547
     goto/16 :goto_2
 
-    .line 546
+    .line 549
     :pswitch_4
     move-object/from16 v0, p0
 
@@ -1586,13 +1587,13 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 547
+    .line 550
     add-int/lit8 v11, v11, 0x1
 
-    .line 548
+    .line 551
     goto/16 :goto_2
 
-    .line 550
+    .line 553
     :pswitch_5
     move-object/from16 v0, p0
 
@@ -1614,13 +1615,13 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 551
+    .line 554
     add-int/lit8 v11, v11, 0x1
 
-    .line 552
+    .line 555
     goto/16 :goto_2
 
-    .line 554
+    .line 557
     :pswitch_6
     move-object/from16 v0, p0
 
@@ -1642,13 +1643,13 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 555
+    .line 558
     add-int/lit8 v11, v11, 0x1
 
-    .line 556
+    .line 559
     goto/16 :goto_2
 
-    .line 558
+    .line 561
     :pswitch_7
     move-object/from16 v0, p0
 
@@ -1670,17 +1671,17 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 559
-    add-int/lit8 v11, v11, 0x1
-
-    .line 560
-    goto/16 :goto_2
-
     .line 562
-    :pswitch_8
     add-int/lit8 v11, v11, 0x1
 
     .line 563
+    goto/16 :goto_2
+
+    .line 565
+    :pswitch_8
+    add-int/lit8 v11, v11, 0x1
+
+    .line 566
     aget-byte v23, v10, v11
 
     move/from16 v0, v23
@@ -1695,9 +1696,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_e
+    if-eq v0, v1, :cond_f
 
-    .line 564
+    .line 567
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1722,31 +1723,31 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 565
+    .line 568
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 567
-    :cond_e
+    .line 570
+    :cond_f
     add-int/lit8 v11, v11, 0x1
 
-    .line 568
+    .line 571
     aget-byte v23, v10, v11
 
     add-int v11, v11, v23
 
-    .line 569
-    add-int/lit8 v11, v11, 0x1
-
-    .line 570
-    goto/16 :goto_2
-
     .line 572
-    :pswitch_9
     add-int/lit8 v11, v11, 0x1
 
     .line 573
+    goto/16 :goto_2
+
+    .line 575
+    :pswitch_9
+    add-int/lit8 v11, v11, 0x1
+
+    .line 576
     aget-byte v23, v10, v11
 
     const/16 v24, 0x3
@@ -1755,9 +1756,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_f
+    if-eq v0, v1, :cond_10
 
-    .line 574
+    .line 577
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1782,16 +1783,16 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 575
+    .line 578
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 577
-    :cond_f
+    .line 580
+    :cond_10
     add-int/lit8 v11, v11, 0x1
 
-    .line 578
+    .line 581
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1804,9 +1805,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_10
+    if-nez v23, :cond_11
 
-    .line 579
+    .line 582
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1831,13 +1832,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 580
+    .line 583
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 582
-    :cond_10
+    .line 585
+    :cond_11
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1860,7 +1861,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 583
+    .line 586
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1873,14 +1874,14 @@
 
     add-int v11, v11, v23
 
-    .line 584
+    .line 587
     goto/16 :goto_2
 
-    .line 586
+    .line 589
     :pswitch_a
     add-int/lit8 v11, v11, 0x1
 
-    .line 587
+    .line 590
     aget-byte v23, v10, v11
 
     const/16 v24, 0x3
@@ -1889,9 +1890,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_11
+    if-eq v0, v1, :cond_12
 
-    .line 588
+    .line 591
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1916,16 +1917,16 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 589
+    .line 592
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 591
-    :cond_11
+    .line 594
+    :cond_12
     add-int/lit8 v11, v11, 0x1
 
-    .line 592
+    .line 595
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1938,9 +1939,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_12
+    if-nez v23, :cond_13
 
-    .line 593
+    .line 596
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -1965,13 +1966,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 594
+    .line 597
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 596
-    :cond_12
+    .line 599
+    :cond_13
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -1994,7 +1995,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 597
+    .line 600
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2007,7 +2008,7 @@
 
     add-int v11, v11, v23
 
-    .line 598
+    .line 601
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2056,11 +2057,11 @@
 
     goto/16 :goto_2
 
-    .line 601
+    .line 604
     :pswitch_b
     add-int/lit8 v11, v11, 0x1
 
-    .line 602
+    .line 605
     aget-byte v23, v10, v11
 
     const/16 v24, 0x3
@@ -2069,9 +2070,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_13
+    if-eq v0, v1, :cond_14
 
-    .line 603
+    .line 606
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2096,16 +2097,16 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 604
+    .line 607
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 606
-    :cond_13
+    .line 609
+    :cond_14
     add-int/lit8 v11, v11, 0x1
 
-    .line 607
+    .line 610
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2118,9 +2119,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_14
+    if-nez v23, :cond_15
 
-    .line 608
+    .line 611
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2145,13 +2146,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 609
+    .line 612
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 611
-    :cond_14
+    .line 614
+    :cond_15
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2174,7 +2175,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 612
+    .line 615
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2187,7 +2188,7 @@
 
     add-int v11, v11, v23
 
-    .line 613
+    .line 616
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2236,11 +2237,11 @@
 
     goto/16 :goto_2
 
-    .line 616
+    .line 619
     :pswitch_c
     add-int/lit8 v11, v11, 0x1
 
-    .line 617
+    .line 620
     aget-byte v23, v10, v11
 
     const/16 v24, 0x3
@@ -2249,9 +2250,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_15
+    if-eq v0, v1, :cond_16
 
-    .line 618
+    .line 621
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2276,16 +2277,16 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 619
+    .line 622
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 621
-    :cond_15
+    .line 624
+    :cond_16
     add-int/lit8 v11, v11, 0x1
 
-    .line 622
+    .line 625
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2298,9 +2299,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_16
+    if-nez v23, :cond_17
 
-    .line 623
+    .line 626
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2325,13 +2326,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 624
+    .line 627
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 626
-    :cond_16
+    .line 629
+    :cond_17
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2354,7 +2355,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 627
+    .line 630
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2367,7 +2368,7 @@
 
     add-int v11, v11, v23
 
-    .line 628
+    .line 631
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2416,11 +2417,11 @@
 
     goto/16 :goto_2
 
-    .line 631
+    .line 634
     :pswitch_d
     add-int/lit8 v11, v11, 0x1
 
-    .line 632
+    .line 635
     aget-byte v23, v10, v11
 
     const/16 v24, 0x3
@@ -2429,9 +2430,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_17
+    if-eq v0, v1, :cond_18
 
-    .line 633
+    .line 636
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2456,16 +2457,16 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 634
+    .line 637
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 636
-    :cond_17
+    .line 639
+    :cond_18
     add-int/lit8 v11, v11, 0x1
 
-    .line 637
+    .line 640
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2478,9 +2479,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_18
+    if-nez v23, :cond_19
 
-    .line 638
+    .line 641
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2505,13 +2506,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 639
+    .line 642
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 641
-    :cond_18
+    .line 644
+    :cond_19
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2534,7 +2535,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 642
+    .line 645
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2547,7 +2548,7 @@
 
     add-int v11, v11, v23
 
-    .line 643
+    .line 646
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2596,11 +2597,11 @@
 
     goto/16 :goto_2
 
-    .line 646
+    .line 649
     :pswitch_e
     add-int/lit8 v11, v11, 0x1
 
-    .line 647
+    .line 650
     aget-byte v23, v10, v11
 
     move/from16 v0, v23
@@ -2615,9 +2616,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_19
+    if-eq v0, v1, :cond_1a
 
-    .line 648
+    .line 651
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2642,31 +2643,31 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 649
+    .line 652
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 651
-    :cond_19
+    .line 654
+    :cond_1a
     add-int/lit8 v11, v11, 0x1
 
-    .line 652
+    .line 655
     aget-byte v23, v10, v11
 
     add-int v11, v11, v23
 
-    .line 653
-    add-int/lit8 v11, v11, 0x1
-
-    .line 654
-    goto/16 :goto_2
-
     .line 656
-    :pswitch_f
     add-int/lit8 v11, v11, 0x1
 
     .line 657
+    goto/16 :goto_2
+
+    .line 659
+    :pswitch_f
+    add-int/lit8 v11, v11, 0x1
+
+    .line 660
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2703,7 +2704,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 658
+    .line 661
     aget-byte v23, v10, v11
 
     const/16 v24, 0x3
@@ -2712,9 +2713,9 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_1a
+    if-eq v0, v1, :cond_1b
 
-    .line 659
+    .line 662
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2739,16 +2740,16 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 660
+    .line 663
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 663
-    :cond_1a
+    .line 666
+    :cond_1b
     add-int/lit8 v11, v11, 0x1
 
-    .line 664
+    .line 667
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2761,9 +2762,9 @@
 
     move-result v23
 
-    if-nez v23, :cond_1b
+    if-nez v23, :cond_1c
 
-    .line 665
+    .line 668
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2788,13 +2789,13 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 666
+    .line 669
     const/16 v23, 0x0
 
     goto/16 :goto_0
 
-    .line 668
-    :cond_1b
+    .line 671
+    :cond_1c
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2817,7 +2818,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->si_id:Ljava/lang/String;
 
-    .line 669
+    .line 672
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2830,10 +2831,10 @@
 
     add-int v11, v11, v23
 
-    .line 670
+    .line 673
     goto/16 :goto_2
 
-    .line 680
+    .line 683
     .end local v5           #attrId:I
     .end local v13           #indicationEndTagcount:J
     :sswitch_2
@@ -2847,21 +2848,21 @@
 
     shr-int/lit8 v6, v23, 0x7
 
-    .line 681
+    .line 684
     aget-byte v23, v10, v11
 
     and-int/lit8 v23, v23, 0x40
 
     shr-int/lit8 v9, v23, 0x6
 
-    .line 682
+    .line 685
     add-int v15, v6, v9
 
-    .line 683
+    .line 686
     .local v15, infoEndTagCount:I
     add-int/lit8 v11, v11, 0x1
 
-    .line 684
+    .line 687
     :goto_3
     array-length v0, v10
 
@@ -2871,11 +2872,11 @@
 
     move/from16 v0, v23
 
-    if-gt v11, v0, :cond_9
+    if-gt v11, v0, :cond_a
 
-    if-lez v15, :cond_9
+    if-lez v15, :cond_a
 
-    .line 686
+    .line 689
     const/16 v23, 0x1
 
     aget-byte v24, v10, v11
@@ -2890,20 +2891,20 @@
 
     move/from16 v1, v24
 
-    if-ne v0, v1, :cond_1c
+    if-ne v0, v1, :cond_1d
 
-    .line 687
+    .line 690
     add-int/lit8 v15, v15, -0x1
 
-    .line 689
-    :cond_1c
+    .line 692
+    :cond_1d
     add-int/lit8 v11, v11, 0x1
 
     goto :goto_3
 
-    .line 701
+    .line 704
     .end local v15           #infoEndTagCount:I
-    :cond_1d
+    :cond_1e
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -2928,9 +2929,9 @@
 
     move/from16 v1, v24
 
-    if-ne v0, v1, :cond_20
+    if-ne v0, v1, :cond_21
 
-    .line 702
+    .line 705
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -2965,15 +2966,15 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 703
+    .line 706
     const-string v23, "WAP PUSH"
 
     const-string v24, "delete all the push message with the same si_id"
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 711
-    :cond_1e
+    .line 714
+    :cond_1f
     :goto_4
     const-string v23, "WAP PUSH"
 
@@ -3003,7 +3004,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 712
+    .line 715
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3030,7 +3031,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 713
+    .line 716
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3057,7 +3058,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 714
+    .line 717
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3084,7 +3085,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 715
+    .line 718
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3119,7 +3120,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 716
+    .line 719
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3154,7 +3155,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 717
+    .line 720
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3189,7 +3190,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 719
+    .line 722
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -3202,9 +3203,9 @@
 
     move-object/from16 v23, v0
 
-    if-eqz v23, :cond_1f
+    if-eqz v23, :cond_20
 
-    .line 720
+    .line 723
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3243,8 +3244,8 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 722
-    :cond_1f
+    .line 725
+    :cond_20
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3279,7 +3280,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 723
+    .line 726
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3308,7 +3309,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 725
+    .line 728
     new-instance v16, Landroid/content/Intent;
 
     const-string v23, "android.provider.Telephony.WAP_PUSH_RECEIVED"
@@ -3319,7 +3320,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 726
+    .line 729
     .local v16, intent:Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -3333,7 +3334,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 727
+    .line 730
     const-string/jumbo v23, "transactionId"
 
     move-object/from16 v0, v16
@@ -3344,7 +3345,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 728
+    .line 731
     const-string/jumbo v23, "pduType"
 
     move-object/from16 v0, v16
@@ -3355,7 +3356,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 729
+    .line 732
     const-string v23, "data"
 
     move-object/from16 v0, v16
@@ -3364,7 +3365,7 @@
 
     invoke-virtual {v0, v1, v10}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 730
+    .line 733
     const-string v23, "href"
 
     move-object/from16 v0, p0
@@ -3387,7 +3388,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 731
+    .line 734
     const-string v23, "action"
 
     move-object/from16 v0, p0
@@ -3410,7 +3411,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 732
+    .line 735
     const-string v23, "NotifyText"
 
     move-object/from16 v0, p0
@@ -3433,7 +3434,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 734
+    .line 737
     const-string v23, "address"
 
     move-object/from16 v0, p0
@@ -3450,7 +3451,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 736
+    .line 739
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
@@ -3467,14 +3468,14 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 738
+    .line 741
     const/16 v23, 0x1
 
     goto/16 :goto_0
 
-    .line 705
+    .line 708
     .end local v16           #intent:Landroid/content/Intent;
-    :cond_20
+    :cond_21
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -3499,7 +3500,7 @@
 
     move/from16 v1, v24
 
-    if-eq v0, v1, :cond_21
+    if-eq v0, v1, :cond_22
 
     move-object/from16 v0, p0
 
@@ -3525,10 +3526,10 @@
 
     move/from16 v1, v24
 
-    if-ne v0, v1, :cond_1e
+    if-ne v0, v1, :cond_1f
 
-    .line 706
-    :cond_21
+    .line 709
+    :cond_22
     const-string v23, "WAP PUSH"
 
     new-instance v24, Ljava/lang/StringBuilder;
@@ -3563,7 +3564,7 @@
 
     invoke-static/range {v23 .. v24}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 707
+    .line 710
     const-string v23, "WAP PUSH"
 
     const-string v24, "don\'t save the push message"
@@ -3572,7 +3573,7 @@
 
     goto/16 :goto_4
 
-    .line 496
+    .line 499
     nop
 
     :sswitch_data_0
@@ -3582,7 +3583,7 @@
         0x7 -> :sswitch_2
     .end sparse-switch
 
-    .line 512
+    .line 515
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_1
@@ -3613,7 +3614,7 @@
     .parameter "dataIndex"
 
     .prologue
-    .line 746
+    .line 749
     move-object/from16 v0, p1
 
     array-length v0, v0
@@ -3626,7 +3627,7 @@
 
     new-array v9, v0, [B
 
-    .line 747
+    .line 750
     .local v9, data:[B
     const/16 v19, 0x0
 
@@ -3644,10 +3645,10 @@
 
     invoke-static {v0, v1, v9, v2, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 750
+    .line 753
     const/4 v10, 0x0
 
-    .line 751
+    .line 754
     .local v10, index:I
     add-int/lit8 v11, v10, 0x1
 
@@ -3661,7 +3662,7 @@
 
     move/from16 v18, v0
 
-    .line 752
+    .line 755
     .local v18, wbxml_version:I
     const/16 v19, 0x1
 
@@ -3679,7 +3680,7 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 753
+    .line 756
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -3704,18 +3705,18 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 754
+    .line 757
     const/16 v19, 0x0
 
     move v10, v11
 
-    .line 957
+    .line 960
     .end local v11           #index:I
     .restart local v10       #index:I
     :goto_0
     return v19
 
-    .line 758
+    .line 761
     .end local v10           #index:I
     .restart local v11       #index:I
     :cond_0
@@ -3731,7 +3732,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
 
-    .line 761
+    .line 764
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -3746,7 +3747,7 @@
 
     if-nez v19, :cond_1
 
-    .line 762
+    .line 765
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -3771,7 +3772,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 763
+    .line 766
     const/16 v19, 0x0
 
     move v10, v11
@@ -3780,7 +3781,7 @@
     .restart local v10       #index:I
     goto :goto_0
 
-    .line 765
+    .line 768
     .end local v10           #index:I
     .restart local v11       #index:I
     :cond_1
@@ -3794,7 +3795,7 @@
 
     move-result-wide v13
 
-    .line 766
+    .line 769
     .local v13, publicId:J
     move-object/from16 v0, p0
 
@@ -3808,7 +3809,7 @@
 
     add-int/lit8 v10, v19, 0x1
 
-    .line 767
+    .line 770
     .end local v11           #index:I
     .restart local v10       #index:I
     const-wide/16 v19, 0x6
@@ -3817,7 +3818,7 @@
 
     if-eqz v19, :cond_2
 
-    .line 768
+    .line 771
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -3842,12 +3843,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 769
+    .line 772
     const/16 v19, 0x0
 
     goto :goto_0
 
-    .line 773
+    .line 776
     :cond_2
     move-object/from16 v0, p0
 
@@ -3863,7 +3864,7 @@
 
     if-nez v19, :cond_3
 
-    .line 774
+    .line 777
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -3888,12 +3889,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 775
+    .line 778
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 777
+    .line 780
     :cond_3
     move-object/from16 v0, p0
 
@@ -3905,7 +3906,7 @@
 
     move-result-wide v6
 
-    .line 778
+    .line 781
     .local v6, charSet:J
     move-object/from16 v0, p0
 
@@ -3919,7 +3920,7 @@
 
     add-int v10, v10, v19
 
-    .line 780
+    .line 783
     const-wide/16 v19, 0x6a
 
     cmp-long v19, v19, v6
@@ -3932,7 +3933,7 @@
 
     if-eqz v19, :cond_4
 
-    .line 781
+    .line 784
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -3957,12 +3958,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 782
+    .line 785
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 787
+    .line 790
     :cond_4
     move-object/from16 v0, p0
 
@@ -3978,7 +3979,7 @@
 
     if-nez v19, :cond_5
 
-    .line 788
+    .line 791
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4003,12 +4004,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 789
+    .line 792
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 791
+    .line 794
     :cond_5
     move-object/from16 v0, p0
 
@@ -4020,7 +4021,7 @@
 
     move-result-wide v16
 
-    .line 792
+    .line 795
     .local v16, table_strlen:J
     move-object/from16 v0, p0
 
@@ -4034,14 +4035,14 @@
 
     add-int v10, v10, v19
 
-    .line 793
+    .line 796
     const-wide/16 v19, 0x0
 
     cmp-long v19, v19, v16
 
     if-eqz v19, :cond_6
 
-    .line 794
+    .line 797
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4066,12 +4067,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 795
+    .line 798
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 798
+    .line 801
     :cond_6
     int-to-long v0, v10
 
@@ -4083,7 +4084,7 @@
 
     long-to-int v10, v0
 
-    .line 800
+    .line 803
     array-length v0, v9
 
     move/from16 v19, v0
@@ -4094,7 +4095,7 @@
 
     if-lt v10, v0, :cond_7
 
-    .line 801
+    .line 804
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4119,12 +4120,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 802
+    .line 805
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 806
+    .line 809
     :cond_7
     move-object/from16 v0, p0
 
@@ -4140,7 +4141,7 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 807
+    .line 810
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4155,7 +4156,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 808
+    .line 811
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4170,7 +4171,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->NotifyText:Ljava/lang/String;
 
-    .line 809
+    .line 812
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4181,7 +4182,7 @@
 
     iput-wide v6, v0, Lcom/android/internal/telephony/WspTypeDecoder;->CharSet:J
 
-    .line 811
+    .line 814
     aget-byte v19, v9, v10
 
     move/from16 v0, v19
@@ -4192,7 +4193,7 @@
 
     shr-int/lit8 v5, v19, 0x7
 
-    .line 812
+    .line 815
     .local v5, attrTag:I
     aget-byte v19, v9, v10
 
@@ -4200,13 +4201,13 @@
 
     shr-int/lit8 v8, v19, 0x6
 
-    .line 813
+    .line 816
     .local v8, conTag:I
     aget-byte v19, v9, v10
 
     and-int/lit8 v4, v19, 0x3f
 
-    .line 814
+    .line 817
     .local v4, SL_tag:I
     const/16 v19, 0x5
 
@@ -4214,7 +4215,7 @@
 
     if-eq v0, v4, :cond_8
 
-    .line 815
+    .line 818
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4239,20 +4240,20 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 816
+    .line 819
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 818
+    .line 821
     :cond_8
     add-int v15, v5, v8
 
-    .line 819
+    .line 822
     .local v15, slEndTagCount:I
     add-int/lit8 v10, v10, 0x1
 
-    .line 821
+    .line 824
     :goto_1
     array-length v0, v9
 
@@ -4264,15 +4265,15 @@
 
     if-lez v15, :cond_14
 
-    .line 823
+    .line 826
     aget-byte v19, v9, v10
 
     and-int/lit8 v4, v19, 0x3f
 
-    .line 824
+    .line 827
     packed-switch v4, :pswitch_data_0
 
-    .line 916
+    .line 919
     :pswitch_0
     const-string v19, "WAP PUSH"
 
@@ -4298,12 +4299,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 917
+    .line 920
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 826
+    .line 829
     :pswitch_1
     aget-byte v19, v9, v10
 
@@ -4315,7 +4316,7 @@
 
     if-eqz v19, :cond_9
 
-    .line 827
+    .line 830
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4340,22 +4341,22 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 828
+    .line 831
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 830
+    .line 833
     :cond_9
     add-int/lit8 v10, v10, 0x1
 
-    .line 831
+    .line 834
     add-int/lit8 v15, v15, -0x1
 
-    .line 832
+    .line 835
     goto :goto_1
 
-    .line 834
+    .line 837
     :pswitch_2
     move-object/from16 v0, p0
 
@@ -4377,13 +4378,13 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 835
+    .line 838
     add-int/lit8 v10, v10, 0x1
 
-    .line 836
+    .line 839
     goto :goto_1
 
-    .line 838
+    .line 841
     :pswitch_3
     move-object/from16 v0, p0
 
@@ -4405,13 +4406,13 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 839
+    .line 842
     add-int/lit8 v10, v10, 0x1
 
-    .line 840
+    .line 843
     goto/16 :goto_1
 
-    .line 842
+    .line 845
     :pswitch_4
     move-object/from16 v0, p0
 
@@ -4433,17 +4434,17 @@
 
     iput v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->action:I
 
-    .line 843
-    add-int/lit8 v10, v10, 0x1
-
-    .line 844
-    goto/16 :goto_1
-
     .line 846
-    :pswitch_5
     add-int/lit8 v10, v10, 0x1
 
     .line 847
+    goto/16 :goto_1
+
+    .line 849
+    :pswitch_5
+    add-int/lit8 v10, v10, 0x1
+
+    .line 850
     aget-byte v19, v9, v10
 
     const/16 v20, 0x3
@@ -4454,7 +4455,7 @@
 
     if-eq v0, v1, :cond_a
 
-    .line 848
+    .line 851
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4479,16 +4480,16 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 849
+    .line 852
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 851
+    .line 854
     :cond_a
     add-int/lit8 v10, v10, 0x1
 
-    .line 852
+    .line 855
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4503,7 +4504,7 @@
 
     if-nez v19, :cond_b
 
-    .line 853
+    .line 856
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4528,12 +4529,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 854
+    .line 857
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 856
+    .line 859
     :cond_b
     move-object/from16 v0, p0
 
@@ -4557,7 +4558,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 857
+    .line 860
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4570,14 +4571,14 @@
 
     add-int v10, v10, v19
 
-    .line 858
+    .line 861
     goto/16 :goto_1
 
-    .line 860
+    .line 863
     :pswitch_6
     add-int/lit8 v10, v10, 0x1
 
-    .line 861
+    .line 864
     aget-byte v19, v9, v10
 
     const/16 v20, 0x3
@@ -4588,7 +4589,7 @@
 
     if-eq v0, v1, :cond_c
 
-    .line 862
+    .line 865
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4613,16 +4614,16 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 863
+    .line 866
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 865
+    .line 868
     :cond_c
     add-int/lit8 v10, v10, 0x1
 
-    .line 866
+    .line 869
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4637,7 +4638,7 @@
 
     if-nez v19, :cond_d
 
-    .line 867
+    .line 870
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4662,12 +4663,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 868
+    .line 871
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 870
+    .line 873
     :cond_d
     move-object/from16 v0, p0
 
@@ -4713,7 +4714,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 871
+    .line 874
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4726,14 +4727,14 @@
 
     add-int v10, v10, v19
 
-    .line 872
+    .line 875
     goto/16 :goto_1
 
-    .line 874
+    .line 877
     :pswitch_7
     add-int/lit8 v10, v10, 0x1
 
-    .line 875
+    .line 878
     aget-byte v19, v9, v10
 
     const/16 v20, 0x3
@@ -4744,7 +4745,7 @@
 
     if-eq v0, v1, :cond_e
 
-    .line 876
+    .line 879
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4769,16 +4770,16 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 877
+    .line 880
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 879
+    .line 882
     :cond_e
     add-int/lit8 v10, v10, 0x1
 
-    .line 880
+    .line 883
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4793,7 +4794,7 @@
 
     if-nez v19, :cond_f
 
-    .line 881
+    .line 884
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4818,12 +4819,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 882
+    .line 885
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 884
+    .line 887
     :cond_f
     move-object/from16 v0, p0
 
@@ -4869,7 +4870,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 885
+    .line 888
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4882,14 +4883,14 @@
 
     add-int v10, v10, v19
 
-    .line 886
+    .line 889
     goto/16 :goto_1
 
-    .line 888
+    .line 891
     :pswitch_8
     add-int/lit8 v10, v10, 0x1
 
-    .line 889
+    .line 892
     aget-byte v19, v9, v10
 
     const/16 v20, 0x3
@@ -4900,7 +4901,7 @@
 
     if-eq v0, v1, :cond_10
 
-    .line 890
+    .line 893
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4925,16 +4926,16 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 891
+    .line 894
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 893
+    .line 896
     :cond_10
     add-int/lit8 v10, v10, 0x1
 
-    .line 894
+    .line 897
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->siPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -4949,7 +4950,7 @@
 
     if-nez v19, :cond_11
 
-    .line 895
+    .line 898
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -4974,12 +4975,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 896
+    .line 899
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 898
+    .line 901
     :cond_11
     move-object/from16 v0, p0
 
@@ -5025,7 +5026,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 899
+    .line 902
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -5038,14 +5039,14 @@
 
     add-int v10, v10, v19
 
-    .line 900
+    .line 903
     goto/16 :goto_1
 
-    .line 902
+    .line 905
     :pswitch_9
     add-int/lit8 v10, v10, 0x1
 
-    .line 903
+    .line 906
     aget-byte v19, v9, v10
 
     const/16 v20, 0x3
@@ -5056,7 +5057,7 @@
 
     if-eq v0, v1, :cond_12
 
-    .line 904
+    .line 907
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5081,16 +5082,16 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 905
+    .line 908
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 907
+    .line 910
     :cond_12
     add-int/lit8 v10, v10, 0x1
 
-    .line 908
+    .line 911
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -5105,7 +5106,7 @@
 
     if-nez v19, :cond_13
 
-    .line 909
+    .line 912
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5130,12 +5131,12 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 910
+    .line 913
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 912
+    .line 915
     :cond_13
     move-object/from16 v0, p0
 
@@ -5181,7 +5182,7 @@
 
     iput-object v0, v1, Lcom/android/internal/telephony/WspTypeDecoder;->href:Ljava/lang/String;
 
-    .line 913
+    .line 916
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->slPduDecoder:Lcom/android/internal/telephony/WspTypeDecoder;
@@ -5194,10 +5195,10 @@
 
     add-int v10, v10, v19
 
-    .line 914
+    .line 917
     goto/16 :goto_1
 
-    .line 923
+    .line 926
     :cond_14
     move-object/from16 v0, p0
 
@@ -5213,7 +5214,7 @@
 
     if-eqz v19, :cond_15
 
-    .line 925
+    .line 928
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5248,7 +5249,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 927
+    .line 930
     new-instance v12, Landroid/content/Intent;
 
     const-string v19, "android.provider.Telephony.WAP_PUSH_RECEIVED"
@@ -5257,7 +5258,7 @@
 
     invoke-direct {v12, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 928
+    .line 931
     .local v12, intent:Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -5269,7 +5270,7 @@
 
     invoke-virtual {v12, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 929
+    .line 932
     const-string v19, "href"
 
     move-object/from16 v0, p0
@@ -5290,7 +5291,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 930
+    .line 933
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
@@ -5305,12 +5306,12 @@
 
     invoke-virtual {v0, v12, v1}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 931
+    .line 934
     const/16 v19, 0x1
 
     goto/16 :goto_0
 
-    .line 934
+    .line 937
     .end local v12           #intent:Landroid/content/Intent;
     :cond_15
     move-object/from16 v0, p0
@@ -5339,19 +5340,19 @@
 
     if-ne v0, v1, :cond_16
 
-    .line 935
+    .line 938
     const-string v19, "WAP PUSH"
 
     const-string v20, "Received SL push not handled when action is cache "
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 936
+    .line 939
     const/16 v19, 0x0
 
     goto/16 :goto_0
 
-    .line 939
+    .line 942
     :cond_16
     const-string v19, "WAP PUSH"
 
@@ -5381,7 +5382,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 940
+    .line 943
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5408,7 +5409,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 941
+    .line 944
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5435,7 +5436,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 942
+    .line 945
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5470,7 +5471,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 943
+    .line 946
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5505,7 +5506,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 944
+    .line 947
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5540,7 +5541,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 945
+    .line 948
     const-string v19, "WAP PUSH"
 
     new-instance v20, Ljava/lang/StringBuilder;
@@ -5569,7 +5570,7 @@
 
     invoke-static/range {v19 .. v20}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 947
+    .line 950
     new-instance v12, Landroid/content/Intent;
 
     const-string v19, "android.provider.Telephony.WAP_PUSH_RECEIVED"
@@ -5578,7 +5579,7 @@
 
     invoke-direct {v12, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 948
+    .line 951
     .restart local v12       #intent:Landroid/content/Intent;
     move-object/from16 v0, p0
 
@@ -5590,7 +5591,7 @@
 
     invoke-virtual {v12, v0}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 949
+    .line 952
     const-string/jumbo v19, "transactionId"
 
     move-object/from16 v0, v19
@@ -5599,7 +5600,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 950
+    .line 953
     const-string/jumbo v19, "pduType"
 
     move-object/from16 v0, v19
@@ -5608,14 +5609,14 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 951
+    .line 954
     const-string v19, "data"
 
     move-object/from16 v0, v19
 
     invoke-virtual {v12, v0, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 952
+    .line 955
     const-string v19, "href"
 
     move-object/from16 v0, p0
@@ -5636,7 +5637,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 953
+    .line 956
     const-string v19, "action"
 
     move-object/from16 v0, p0
@@ -5657,7 +5658,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 954
+    .line 957
     const-string v19, "address"
 
     move-object/from16 v0, p0
@@ -5672,7 +5673,7 @@
 
     invoke-virtual {v12, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 956
+    .line 959
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
@@ -5687,12 +5688,12 @@
 
     invoke-virtual {v0, v12, v1}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 957
+    .line 960
     const/16 v19, 0x1
 
     goto/16 :goto_0
 
-    .line 824
+    .line 827
     nop
 
     :pswitch_data_0
@@ -5720,7 +5721,7 @@
     .parameter "dataIndex"
 
     .prologue
-    .line 965
+    .line 968
     const-string v1, "WAP PUSH"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -5747,32 +5748,32 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 968
+    .line 971
     new-instance v0, Landroid/content/Intent;
 
     const-string v1, "android.provider.Telephony.WAP_PUSH_RECEIVED"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 969
+    .line 972
     .local v0, intent:Landroid/content/Intent;
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mimeType:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 970
+    .line 973
     const-string v1, "data"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[B)Landroid/content/Intent;
 
-    .line 971
+    .line 974
     iget-object v1, p0, Lcom/android/internal/telephony/WapPushOverSms;->mSmsDispatcher:Lcom/android/internal/telephony/SMSDispatcher;
 
     const-string v2, "android.permission.RECEIVE_WAP_PUSH"
 
     invoke-virtual {v1, v0, v2}, Lcom/android/internal/telephony/SMSDispatcher;->dispatch(Landroid/content/Intent;Ljava/lang/String;)V
 
-    .line 973
+    .line 976
     return-void
 .end method
 

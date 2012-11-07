@@ -12,4 +12,4 @@ fi
 echo "Copy FIRMWARE Files"
 rm -r out/target_files/RADIO/
 mkdir -p out/target_files/RADIO/
-cp -r other/firmwares/b05/* out/target_files/RADIO/
+cp -r other/firmwares/b06/* out/target_files/RADIO/

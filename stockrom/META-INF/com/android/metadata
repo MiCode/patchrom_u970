@@ -1,3 +1,3 @@
-post-build=generic/ventana/ventana:4.0.3/IML74K/user.ztetd.20120912.144735:user/release-keys
-post-timestamp=1347432495
+post-build=generic/ventana/ventana:4.0.3/IML74K/user.ztetd.20121016.155330:user/release-keys
+post-timestamp=1350374050
 pre-device=ventana
